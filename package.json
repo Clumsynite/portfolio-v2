@@ -2,14 +2,22 @@
   "name": "portfolio-v2",
   "version": "0.1.0",
   "private": true,
+  "description": "Rishabh Pathak's Web development Portfolio. Built using Next JS.",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start"
   },
+  "author": {
+    "email": "rishabhjpathak@gmail.com",
+    "name": "Rishabh Pathak",
+    "url": "https://github.com/Clumsynite"
+  },
   "dependencies": {
     "next": "10.2.0",
     "react": "17.0.2",
-    "react-dom": "17.0.2"
+    "react-dom": "17.0.2",
+    "semantic-ui-css": "^2.4.1",
+    "semantic-ui-react": "^2.0.3"
   }
 }
