@@ -1,8 +1,9 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { Container } from "semantic-ui-react";
+import { ThemeProvider } from "../context/Theme";
 
-import ThemeSwitcher from "./ThemeSwitcher";
+import Navbar from "./Navbar";
 
 const name = "Rishabh Pathak";
 export const siteTitle = `${name} Portfolio`;
@@ -28,12 +29,16 @@ export default function Layout({ children, page }) {
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
-      <Container fluid>
-        <Container textAlign="right" style={{ padding: "10px 0" }}>
-          <ThemeSwitcher />
-        </Container>
-        <main>{children}</main>
-      </Container>
+      <ThemeProvider>
+        <Navbar
+          page={page}
+          children={
+            <Container fluid>
+              <main>{children}</main>
+            </Container>
+          }
+        />
+      </ThemeProvider>
     </div>
   );
 }
