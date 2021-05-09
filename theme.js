@@ -1,4 +1,4 @@
-const dark = { bg: "#000", fg: "#fafafa" };
+const dark = { bg: "#121212", fg: "#fafafa" };
 const light = { bg: "#fafafa", fg: "#000" };
 
 export { dark, light };

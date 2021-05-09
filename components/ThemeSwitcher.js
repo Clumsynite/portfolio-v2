@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import { ThemeContext } from "../context/Theme";
-import { Button } from "semantic-ui-react";
+import { Icon } from "semantic-ui-react";
 
 export default function ThemeSwitcher() {
   const { theme, setTheme } = useContext(ThemeContext);
@@ -13,15 +13,14 @@ export default function ThemeSwitcher() {
   const nextTheme = () => (theme === "light" ? "dark" : "light");
 
   return (
-    <div>
-      <Button
-        onClick={() => setTheme(nextTheme())}
-        icon={icon[nextTheme()].name}
-        circular
-        compact
-        color={icon[nextTheme()].color}
-        size={"large"}
-      />
-    </div>
+    <Icon
+      onClick={() => setTheme(nextTheme())}
+      name={icon[nextTheme()].name}
+      circular
+      flipped={"horizontally"}
+      link
+      color={icon[nextTheme()].color}
+      inverted
+    />
   );
 }

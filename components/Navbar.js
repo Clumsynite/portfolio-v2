@@ -10,6 +10,9 @@ import {
 } from "semantic-ui-react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeContext } from "../context/Theme";
+import Logo from "./Logo";
+import * as ThemeConfig from "../theme";
+
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
     mobile: 0,
@@ -28,16 +31,25 @@ const DesktopContainer = ({ children, page, dark }) => {
         onBottomPassed={() => setFixed(true)}
         onBottomPassedReverse={() => setFixed(false)}
       >
-        <Segment textAlign="center" vertical>
+        <Segment vertical>
           <Menu
             fixed={fixed ? "top" : null}
-            pointing
             secondary
             size="large"
             inverted={dark}
           >
-            <Container>
-              <Menu.Item as="a" active={"Home" === page}>
+            <Container
+              fluid
+              style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
+            >
+              <Menu.Item>
+                <Logo dark={dark} />
+              </Menu.Item>
+              <Menu.Item
+                as="a"
+                active={"Home" === page}
+                style={{ marginLeft: 50 }}
+              >
                 Home
               </Menu.Item>
               <Menu.Item as="a" active={"Work" === page}>
@@ -49,6 +61,7 @@ const DesktopContainer = ({ children, page, dark }) => {
               <Menu.Item as="a" active={"Careers" === page}>
                 Careers
               </Menu.Item>
+
               <Menu.Item position="right">
                 <ThemeSwitcher />
               </Menu.Item>
@@ -72,6 +85,9 @@ const MobileContainer = ({ children, dark }) => {
           onHide={() => setSidebarOpened(false)}
           vertical
           visible={sidebarOpened}
+          style={{
+            backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
+          }}
         >
           <Menu.Item as="a" active>
             Home
@@ -85,18 +101,27 @@ const MobileContainer = ({ children, dark }) => {
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
           <Segment
-            textAlign="center"
-            vertical
-            style={{ transition: "0.3s linear" }}
+            style={{
+              backgroundColor: dark
+                ? ThemeConfig.dark.bg
+                : ThemeConfig.light.bg,
+            }}
           >
-            <Container>
+            <Container
+              fluid
+              style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
+            >
               <Menu inverted={dark} pointing secondary size="large">
-                <Menu.Item onClick={() => setSidebarOpened(true)}>
+                <Menu.Item onClick={() => setSidebarOpened(true)} fitted>
                   <Icon
                     name="sidebar"
                     color={dark ? "grey" : "black"}
+                    size="large"
                     inverted={dark}
                   />
+                </Menu.Item>
+                <Menu.Item fitted>
+                  <Logo dark={dark} mobile={true} />
                 </Menu.Item>
                 <Menu.Item position="right">
                   <ThemeSwitcher />
@@ -104,7 +129,6 @@ const MobileContainer = ({ children, dark }) => {
               </Menu>
             </Container>
           </Segment>
-
           {children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>

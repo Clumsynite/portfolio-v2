@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Michroma&display=swap");
+
 :root {
-  --main-bg: #000;
+  --main-bg: #121212;
   --main-fg: #fafafa;
 }
 
@@ -30,4 +32,8 @@ a:hover {
 img {
   max-width: 100%;
   display: block;
+}
+
+.michroma {
+  font-family: "Michroma", sans-serif;
 }
