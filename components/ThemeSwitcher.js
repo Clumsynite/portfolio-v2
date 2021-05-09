@@ -1,42 +1,25 @@
-import React, { useState, useEffect } from "react";
-import * as Theme from "../theme";
+import React, { useContext } from "react";
+import { ThemeContext } from "../context/Theme";
 import { Button } from "semantic-ui-react";
 
 export default function ThemeSwitcher() {
-  const [theme, setTheme] = useState(localStorage.theme || "dark");
-
-  useEffect(() => {
-    if (!theme) {
-      localStorage.setItem("theme", "dark");
-    }
-
-    setCSSRoot("--main-bg", Theme[theme].bg);
-    setCSSRoot("--main-fg", Theme[theme].fg);
-    setTheme(localStorage.theme);
-  }, []);
-
-  useEffect(() => {
-    setCSSRoot("--main-bg", Theme[theme].bg);
-    setCSSRoot("--main-fg", Theme[theme].fg);
-    localStorage.setItem("theme", theme);
-  }, [theme]);
-
-  const setCSSRoot = (key, value) =>
-    document.documentElement.style.setProperty(key, value);
+  const { theme, setTheme } = useContext(ThemeContext);
 
   const icon = {
     dark: { name: "moon", color: "black" },
     light: { name: "sun", color: "yellow" },
   };
 
+  const nextTheme = () => (theme === "light" ? "dark" : "light");
+
   return (
     <div>
       <Button
-        onClick={() => setTheme(theme === "light" ? "dark" : "light")}
-        icon={icon[theme].name}
+        onClick={() => setTheme(nextTheme())}
+        icon={icon[nextTheme()].name}
         circular
         compact
-        color={icon[theme].color}
+        color={icon[nextTheme()].color}
         size={"large"}
       />
     </div>
