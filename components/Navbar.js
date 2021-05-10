@@ -21,6 +21,28 @@ const { MediaContextProvider, Media } = createMedia({
   },
 });
 
+const MenuItems = ({ page, mobile }) => (
+  <>
+    <Menu.Item
+      as="a"
+      active={"Home" === page}
+      style={{ marginLeft: mobile ? 0 : 50 }}
+      to="/"
+    >
+      Home
+    </Menu.Item>
+    <Menu.Item as="a" active={"Projects" === page} to="/projects">
+      Projects
+    </Menu.Item>
+    <Menu.Item as="a" active={"Contact" === page} to="/contact">
+      Contact
+    </Menu.Item>
+    <Menu.Item as="a" active={"About" === page} to="/about">
+      About
+    </Menu.Item>
+  </>
+);
+
 const DesktopContainer = ({ children, page, dark }) => {
   const [fixed, setFixed] = useState(true);
 
@@ -45,23 +67,7 @@ const DesktopContainer = ({ children, page, dark }) => {
               <Menu.Item>
                 <Logo dark={dark} />
               </Menu.Item>
-              <Menu.Item
-                as="a"
-                active={"Home" === page}
-                style={{ marginLeft: 50 }}
-              >
-                Home
-              </Menu.Item>
-              <Menu.Item as="a" active={"Work" === page}>
-                Work
-              </Menu.Item>
-              <Menu.Item as="a" active={"Company" === page}>
-                Company
-              </Menu.Item>
-              <Menu.Item as="a" active={"Careers" === page}>
-                Careers
-              </Menu.Item>
-
+              <MenuItems page={page} />
               <Menu.Item position="right">
                 <ThemeSwitcher />
               </Menu.Item>
@@ -73,7 +79,7 @@ const DesktopContainer = ({ children, page, dark }) => {
     </Media>
   );
 };
-const MobileContainer = ({ children, dark }) => {
+const MobileContainer = ({ children, dark, page }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
   return (
     <Media as={Sidebar.Pushable} at="mobile">
@@ -89,14 +95,7 @@ const MobileContainer = ({ children, dark }) => {
             backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
           }}
         >
-          <Menu.Item as="a" active>
-            Home
-          </Menu.Item>
-          <Menu.Item as="a">Work</Menu.Item>
-          <Menu.Item as="a">Company</Menu.Item>
-          <Menu.Item as="a">Careers</Menu.Item>
-          <Menu.Item as="a">Log in</Menu.Item>
-          <Menu.Item as="a">Sign Up</Menu.Item>
+          <MenuItems page={page} mobile />
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
