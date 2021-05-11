@@ -48,34 +48,30 @@ const DesktopContainer = ({ children, page, dark }) => {
 
   return (
     <Media greaterThan="mobile">
-      <Visibility
-        once={false}
-        onBottomPassed={() => setFixed(true)}
-        onBottomPassedReverse={() => setFixed(false)}
+      <Menu
+        fixed={fixed ? "top" : null}
+        secondary
+        size="large"
+        inverted={dark}
+        style={{
+          backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
+        }}
       >
-        <Segment vertical>
-          <Menu
-            fixed={fixed ? "top" : null}
-            secondary
-            size="large"
-            inverted={dark}
-          >
-            <Container
-              fluid
-              style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
-            >
-              <Menu.Item>
-                <Logo dark={dark} />
-              </Menu.Item>
-              <MenuItems page={page} />
-              <Menu.Item position="right">
-                <ThemeSwitcher />
-              </Menu.Item>
-            </Container>
-          </Menu>
-        </Segment>
-      </Visibility>
-      {children}
+        <Container
+          fluid
+          style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
+        >
+          <Menu.Item>
+            <Logo dark={dark} />
+          </Menu.Item>
+          <MenuItems page={page} />
+          <Menu.Item position="right">
+            <ThemeSwitcher />
+          </Menu.Item>
+        </Container>
+      </Menu>
+
+      <Container>{children}</Container>
     </Media>
   );
 };
@@ -99,35 +95,27 @@ const MobileContainer = ({ children, dark, page }) => {
         </Sidebar>
 
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Segment
-            style={{
-              backgroundColor: dark
-                ? ThemeConfig.dark.bg
-                : ThemeConfig.light.bg,
-            }}
-          >
+          <Menu inverted={dark} pointing secondary size="large" fixed="top">
             <Container
               fluid
               style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
             >
-              <Menu inverted={dark} pointing secondary size="large">
-                <Menu.Item onClick={() => setSidebarOpened(true)} fitted>
-                  <Icon
-                    name="sidebar"
-                    color={dark ? "grey" : "black"}
-                    size="large"
-                    inverted={dark}
-                  />
-                </Menu.Item>
-                <Menu.Item fitted>
-                  <Logo dark={dark} mobile={true} />
-                </Menu.Item>
-                <Menu.Item position="right">
-                  <ThemeSwitcher />
-                </Menu.Item>
-              </Menu>
+              <Menu.Item onClick={() => setSidebarOpened(true)} fitted>
+                <Icon
+                  name="sidebar"
+                  color={dark ? "grey" : "black"}
+                  size="large"
+                  inverted={dark}
+                />
+              </Menu.Item>
+              <Menu.Item fitted>
+                <Logo dark={dark} mobile={true} />
+              </Menu.Item>
+              <Menu.Item position="right">
+                <ThemeSwitcher />
+              </Menu.Item>
             </Container>
-          </Segment>
+          </Menu>
           {children}
         </Sidebar.Pusher>
       </Sidebar.Pushable>
