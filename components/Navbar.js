@@ -1,17 +1,11 @@
 import { createMedia } from "@artsy/fresnel";
 import React, { useState, useContext } from "react";
-import {
-  Container,
-  Icon,
-  Menu,
-  Segment,
-  Sidebar,
-  Visibility,
-} from "semantic-ui-react";
+import { Container, Icon, Menu, Sidebar } from "semantic-ui-react";
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeContext } from "../context/Theme";
 import Logo from "./Logo";
 import * as ThemeConfig from "../theme";
+import Footer from "./Footer";
 
 const { MediaContextProvider, Media } = createMedia({
   breakpoints: {
@@ -44,12 +38,10 @@ const MenuItems = ({ page, mobile }) => (
 );
 
 const DesktopContainer = ({ children, page, dark }) => {
-  const [fixed, setFixed] = useState(true);
-
   return (
     <Media greaterThan="mobile">
       <Menu
-        fixed={fixed ? "top" : null}
+        fixed={"top"}
         secondary
         size="large"
         inverted={dark}
@@ -72,6 +64,7 @@ const DesktopContainer = ({ children, page, dark }) => {
       </Menu>
 
       <Container>{children}</Container>
+      <Footer dark={dark} />
     </Media>
   );
 };
@@ -87,18 +80,23 @@ const MobileContainer = ({ children, dark, page }) => {
           onHide={() => setSidebarOpened(false)}
           vertical
           visible={sidebarOpened}
-          style={{
-            backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
-          }}
         >
           <MenuItems page={page} mobile />
         </Sidebar>
-
         <Sidebar.Pusher dimmed={sidebarOpened}>
-          <Menu inverted={dark} pointing secondary size="large" fixed="top">
-            <Container
-              fluid
-              style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
+          <Container fluid>
+            <Menu
+              inverted={dark}
+              pointing
+              secondary
+              size="large"
+              fixed="top"
+              style={{
+                backgroundColor: dark
+                  ? ThemeConfig.dark.bg
+                  : ThemeConfig.light.bg,
+                boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px",
+              }}
             >
               <Menu.Item onClick={() => setSidebarOpened(true)} fitted>
                 <Icon
@@ -106,17 +104,19 @@ const MobileContainer = ({ children, dark, page }) => {
                   color={dark ? "grey" : "black"}
                   size="large"
                   inverted={dark}
+                  fitted
                 />
               </Menu.Item>
-              <Menu.Item fitted>
+              <Menu.Item>
                 <Logo dark={dark} mobile={true} />
               </Menu.Item>
               <Menu.Item position="right">
                 <ThemeSwitcher />
               </Menu.Item>
-            </Container>
-          </Menu>
-          {children}
+            </Menu>
+          </Container>
+          <Container>{children}</Container>
+          <Footer dark={dark} mobile />
         </Sidebar.Pusher>
       </Sidebar.Pushable>
     </Media>

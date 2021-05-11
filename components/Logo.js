@@ -9,7 +9,7 @@ const Logo = ({ dark, mobile }) => {
       style={{
         textAlign: "center",
         height: mobile ? 28 : 40,
-        width: mobile ? 100 : 200,
+        minWidth: mobile ? 120 : 240,
         fontSize: mobile ? 24 : 32,
         transition: "0.3s ease-in-out",
         color: dark ? "#fafafa" : "#000",

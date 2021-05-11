@@ -30,14 +30,11 @@ export default function Layout({ children, page }) {
         <meta name="twitter:card" content="summary_large_image" />
       </Head>
       <ThemeProvider>
-        <Navbar
-          page={page}
-          children={
-            <Container fluid>
-              <main>{children}</main>
-            </Container>
-          }
-        />
+        <Navbar page={page}>
+          <Container fluid>
+            <main>{children}</main>
+          </Container>
+        </Navbar>
       </ThemeProvider>
     </div>
   );
