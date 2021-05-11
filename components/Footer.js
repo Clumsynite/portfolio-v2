@@ -4,10 +4,7 @@ import styles from "../styles/Footer.module.css";
 
 export default function Footer({ dark, mobile }) {
   return (
-    <footer
-      className={styles.footer}
-      style={{ marginTop: mobile ? 60 : null }}
-    >
+    <footer className={styles.footer}>
       Made with
       <span style={{ padding: "0px 4px" }}>
         <Icon name={"heart"} color="red" fitted inverted={dark} />

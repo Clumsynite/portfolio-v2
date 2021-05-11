@@ -62,7 +62,6 @@ const DesktopContainer = ({ children, page, dark }) => {
           </Menu.Item>
         </Container>
       </Menu>
-
       <Container>{children}</Container>
       <Footer dark={dark} />
     </Media>
@@ -116,8 +115,8 @@ const MobileContainer = ({ children, dark, page }) => {
             </Menu>
           </Container>
           <Container>{children}</Container>
-          <Footer dark={dark} mobile />
         </Sidebar.Pusher>
+        <Footer dark={dark} mobile />
       </Sidebar.Pushable>
     </Media>
   );
