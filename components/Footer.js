@@ -6,7 +6,7 @@ export default function Footer({ dark, mobile }) {
   return (
     <footer
       className={styles.footer}
-      style={{ marginTop: mobile ? 100 : null }}
+      style={{ marginTop: mobile ? 60 : null }}
     >
       Made with
       <span style={{ padding: "0px 4px" }}>
