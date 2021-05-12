@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Typed from "react-typed";
+import * as ThemeConfig from "../config/theme";
 
 const Logo = ({ dark, mobile }) => {
   const [hover, setHover] = useState(false);
@@ -12,7 +13,7 @@ const Logo = ({ dark, mobile }) => {
         minWidth: mobile ? 120 : 240,
         fontSize: mobile ? 24 : 32,
         transition: "0.3s ease-in-out",
-        color: dark ? "#fafafa" : "#000",
+        color: dark ? ThemeConfig.dark.fg : ThemeConfig.light.fg,
       }}
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}

@@ -1,5 +1,5 @@
 import React, { createContext, useReducer, useEffect } from "react";
-import * as Theme from "../theme";
+import * as ThemeConfig from "../config/theme";
 
 let initialState = "dark";
 
@@ -35,8 +35,8 @@ function ThemeProvider(props) {
   }, []);
 
   const setTheme = (theme) => {
-    setCSSRoot("--main-bg", Theme[theme].bg);
-    setCSSRoot("--main-fg", Theme[theme].fg);
+    setCSSRoot("--main-bg", ThemeConfig[theme].bg);
+    setCSSRoot("--main-fg", ThemeConfig[theme].fg);
     window.localStorage.setItem("theme", theme);
     dispatch({ type: "SWITCH_THEME", payload: theme });
   };

@@ -1,12 +1,11 @@
 import { createMedia } from "@artsy/fresnel";
 import React, { useState, useContext } from "react";
 import { Container, Icon, Menu, Sidebar } from "semantic-ui-react";
-import Link from "next/Link";
 
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeContext } from "../context/Theme";
 import Logo from "./Logo";
-import * as ThemeConfig from "../theme";
+import * as ThemeConfig from "../config/theme";
 import Footer from "./Footer";
 
 const { MediaContextProvider, Media } = createMedia({
@@ -20,20 +19,20 @@ const { MediaContextProvider, Media } = createMedia({
 const MenuItems = ({ page, mobile }) => (
   <>
     <Menu.Item
-      as={'a'}
+      as={"a"}
       active={"Home" === page}
       style={{ marginLeft: mobile ? 0 : 50 }}
       href={"/"}
     >
       Home
     </Menu.Item>
-    <Menu.Item as={'a'} active={"Projects" === page} href={"/projects"}>
+    <Menu.Item as={"a"} active={"Projects" === page} href={"/projects"}>
       Projects
     </Menu.Item>
-    <Menu.Item as={'a'} active={"Contact" === page} href={"/contact"}>
+    <Menu.Item as={"a"} active={"Contact" === page} href={"/contact"}>
       Contact
     </Menu.Item>
-    <Menu.Item as={'a'} active={"About" === page} href={"/about"}>
+    <Menu.Item as={"a"} active={"About" === page} href={"/about"}>
       About
     </Menu.Item>
   </>

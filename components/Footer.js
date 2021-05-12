@@ -2,7 +2,7 @@ import React from "react";
 import { Icon } from "semantic-ui-react";
 import styles from "../styles/Footer.module.css";
 
-export default function Footer({ dark, mobile }) {
+export default function Footer({ dark }) {
   return (
     <footer className={styles.footer}>
       Made with
