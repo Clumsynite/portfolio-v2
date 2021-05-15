@@ -1,6 +1,7 @@
 import { createMedia } from "@artsy/fresnel";
 import React, { useState, useContext } from "react";
 import { Container, Icon, Menu, Sidebar } from "semantic-ui-react";
+import Link from "next/link";
 
 import ThemeSwitcher from "./ThemeSwitcher";
 import { ThemeContext } from "../context/Theme";
@@ -19,21 +20,20 @@ const { MediaContextProvider, Media } = createMedia({
 const MenuItems = ({ page, mobile }) => (
   <>
     <Menu.Item
-      as={"a"}
+      link
       active={"Home" === page}
       style={{ marginLeft: mobile ? 0 : 50 }}
-      href={"/"}
     >
-      Home
+      <Link href={"/"}>Home</Link>
     </Menu.Item>
-    <Menu.Item as={"a"} active={"Projects" === page} href={"/projects"}>
-      Projects
+    <Menu.Item link active={"Projects" === page}>
+      <Link href={"/projects"}>Projects</Link>
     </Menu.Item>
-    <Menu.Item as={"a"} active={"Contact" === page} href={"/contact"}>
-      Contact
+    <Menu.Item link active={"Contact" === page}>
+      <Link href={"/contact"}>Contact</Link>
     </Menu.Item>
-    <Menu.Item as={"a"} active={"About" === page} href={"/about"}>
-      About
+    <Menu.Item link active={"About" === page}>
+      <Link href={"/about"}>About</Link>
     </Menu.Item>
   </>
 );
