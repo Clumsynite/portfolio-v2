@@ -1,35 +1,170 @@
-const BlogReadPNG = "/images/blog-read.png";
-const BlogReadGIF = "/images/blog-read.gif";
-const BlogWritePNG = "/images/blog-write.png";
-const BlogWriteGIF = "/images/blog-write.gif";
-const BlogAPIPNG = "/images/blog-api.png";
-const BlogAPIGIF = "/images/blog-api.gif";
-const InventoryAppPNG = "/images/inventory-app.png";
-const InventoryAppGIF = "/images/inventory-app.gif";
-const ShoppingCartPNG = "/images/shopping-cart.png";
-const ShoppingCartGIF = "/images/shopping-cart.gif";
-const AnonDiscussionsPNG = "/images/anon-discussions.png";
-const AnonDiscussionsGIF = "/images/anon-discussions.gif";
-const MemoryCardPNG = "/images/memory-card.png";
-const MemoryCardGIF = "/images/memory-card.gif";
-const CVProjectPNG = "/images/cv-project.png";
-const CVProjectGIF = "/images/cv-project.gif";
-const MiniMsgPNG = "/images/mini-messageboard.png";
-const MiniMsgGIF = "/images/mini-messageboard.gif";
-const WeatherAppPNG = "/images/weather-app.png";
-const WeatherAppGIF = "/images/weather-app.gif";
-const VueLibraryPNG = "/images/vue-library.png";
-const VueLibraryGIF = "/images/vue-library.gif";
-const JsTictactoePNG = "/images/js-tictactoe.png";
-const JsTictactoeGIF = "/images/js-tictactoe.gif";
-const TaskListPNG = "/images/task-list.png";
-const TaskListGIF = "/images/task-list.gif";
-const PomodoroClockPNG = "/images/pomodoro-clock.png";
-const PomodoroClockGIF = "/images/pomodoro-clock.gif";
-const RestaurantPagePNG = "/images/restaurant-page.png";
-const RestaurantPageGIF = "/images/restaurant-page.gif";
+/*
+  Need to add screenshots for dicord-bot
+  - clumsy-bot
+  - portfolio
+  - bank-system-app
+  - clumsy-crypto
+  - clumsy-messenger-app
+  - react-markdown-notes
+  - fcc-merng-app
+  - short-links
+*/
 
-const projects = [
+const api = {
+  blog: {
+    title: "Blog-API",
+    desc: `<p>RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank' href='https://github.com/Clumsynite/blog-read'>Blog-Read</a> and <a class='link' target='_blank' href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</p>`,
+    purpose: ["CRUD Operations on Blog", "Authentication and Session handling"],
+    repo: "https://github.com/Clumsynite/blog-api",
+    live: "https://clumsy-blog.herokuapp.com/",
+    png: "/images/blog-api.png",
+    gif: "/images/blog-api.gif",
+    languages: ["js", "node", "pug", "mongodb", "passport"],
+  },
+  bank: {
+    title: "Bank-System-Api",
+    desc: `<p>
+        A simple banking system, with a database <i>Bank</i> with 2 tables user & accounts. Users table will have all users(bankers & customers).Accounts table will have all the entries of cash deposited & withdrawn.
+      </p>`,
+    purpose: [
+      "Handle SQL database with 2 tables user and accounts",
+      "Manage authentication by two types of user: Banker & Customer, where banker has admin privileges",
+      "Handle account transactions and jwt tokens",
+    ],
+    repo: "http://github.com/clumsynite/bank-system-api",
+    live: "https://bank-system-api.herokuapp.com/",
+    languages: ["js", "sql", "express", "node", "passport"],
+    api: api.bank,
+  },
+  messenger: {
+    title: "Clumsy-Messenger-Api",
+    desc: `<p>
+        Api for Clumsy-messenger-app.
+      </p>`,
+    purpose: [
+      "Handle Socket server",
+      "Handle Authentication",
+      "Manipulate mongodb for messages and user",
+    ],
+    repo: "https://github.com/Clumsynite/clumsy-messenger-api",
+    live: "https://clumsy-messenger.herokuapp.com",
+    languages: ["js", "express", "node", "postman", "mongodb", "socket"],
+  },
+  merng: {
+    title: "Fcc-Merng-Api",
+    desc: `<p>
+        Built after following <a href="https://www.youtube.com/watch?v=n1mdAPFq2Os" target="_blank">this</a> course video.
+      </p>`,
+    purpose: ["Handle mongodb and grahql for mutations and queries"],
+    repo: "https://github.com/Clumsynite/fcc-merng-api",
+    languages: ["js", "express", "node", "graphql", "apollo", "mongodb"],
+  },
+};
+
+export default projects = [
+  {
+    title: "Short-Links",
+    desc: `<p>
+        Another Url Shortener
+      </p>`,
+    purpose: ["Message any registered user"],
+    repo: "https://github.com/Clumsynite/react-markdown-notes",
+    live: "http://clumsynite.github.io/react-markdown-notes",
+    languages: ["react", "next", "ts", "ant", "mongodb"],
+  },
+  {
+    title: "Fcc-Merng-App",
+    desc: `<p>
+        Built after following <a href="https://www.youtube.com/watch?v=n1mdAPFq2Os" target="_blank">this</a> course video.
+      </p>`,
+    purpose: ["Create posts", "Like and comment on other people's posts"],
+    repo: "https://github.com/Clumsynite/fcc-merng-app",
+    languages: ["react", "semanticui", "graphql", "apollo"],
+    api: api.merng,
+  },
+  {
+    title: "Markdown-Notes",
+    desc: `<p>
+        Create Notes in Markdown and save them to localStorage. Built in React.
+      </p>`,
+    purpose: [
+      "Add notes in markdown",
+      "saves data to localStorage",
+      "Change background color for notes",
+    ],
+    repo: "https://github.com/Clumsynite/react-markdown-notes",
+    live: "http://clumsynite.github.io/react-markdown-notes",
+    languages: ["react", "ant", "markdown"],
+  },
+  {
+    title: "Clumsy-Messenger-App",
+    desc: `<p>
+        A real-time messaging app. Built with sockets.
+      </p>`,
+    purpose: [
+      "Message any registered user",
+      "Sends realtime messages",
+      "changes online status on disconnect",
+    ],
+    repo: "https://github.com/Clumsynite/clumsy-messenger-app",
+    live: "https://clumsy-messenger.netlify.app",
+    languages: ["react", "redux", "socket", "bootstrap"],
+    api: api.messenger,
+  },
+  {
+    title: "Clumsy-Crypto",
+    desc: `<p>
+        A Progressive Web App which displays Realtime Price information about BTC, ETH and LTC
+      </p>`,
+    purpose: [
+      "Checking out how a progressive web app works",
+      "Get realtime rates of BTC, ETH, and LTC",
+    ],
+    repo: "https://github.com/Clumsynite/clumsy-crypto",
+    live: "https://clumsynite.github.io/clumsy-crypto/",
+    languages: ["react", "bootstrap", "pwa"],
+  },
+  {
+    title: "Bank-System-App",
+    desc: `<p>
+        A simple banking system, with a database <i>Bank</i> with 2 tables user & accounts. Users table will have all users(bankers & customers).Accounts table will have all the entries of cash deposited & withdrawn.
+      </p>`,
+    purpose: [
+      "Frontend to authenticate banker & customer",
+      "Handle login state from frontend",
+      "render transactions as table",
+      "Allow banker & customer to manage transactions",
+    ],
+    repo: "http://github.com/clumsynite/bank-system-app",
+    live: "https://bank-system-app.netlify.app/",
+    languages: ["vue", "bootstrap"],
+    api: api.bank,
+  },
+  {
+    title: "Portfolio",
+    desc: `<p>
+        My portfolio to highlight my skills and projects.
+      </p>`,
+    purpose: ["Built on react to show the projects I made"],
+    repo: "https://github.com/Clumsynite/portfolio",
+    live: "https://rishabhpathak.netlify.app/",
+    languages: ["react", "bootstrap", "nodemailer", "css"],
+  },
+  {
+    title: "Clumsy-bot",
+    desc: `
+    <p>
+      A discord bot built to try the library, discord.js.
+    </p>`,
+    purpose: [
+      "User can send gifs though chat by using the keys: <code>!gif <name></code>",
+      "The word <code>Bye</code> <i>(case insensitive)</i>, in any sentence or as a single word will return this https://tenor.com/view/bye-slide-baby-later-peace-out-gif-12999722 gif",
+      "!server will return the server's name and Total memebers in it",
+    ],
+    repo: "https://github.com/Clumsynite/clumsy-bot",
+    live: "https://discord.com/oauth2/authorize?client_id=769546560089620550&scope=bot",
+    languages: ["js", "discord"],
+  },
   {
     title: "Blog-Read",
     desc: `
@@ -45,9 +180,10 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/blog-read",
     live: "https://clumsynite.github.io/blog-read/",
-    png: BlogReadPNG,
-    gif: BlogReadGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
+    png: "/images/blog-read.png",
+    gif: "/images/blog-read.gif",
+    languages: ["html", "js", "bootstrap", "react"],
+    api: api.blog,
   },
   {
     title: "Blog-Write",
@@ -60,25 +196,10 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/blog-write",
     live: "https://clumsynite.github.io/blog-write/",
-    png: BlogWritePNG,
-    gif: BlogWriteGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
-  },
-  {
-    title: "Blog-API",
-    desc: `<p>RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank' href='https://github.com/Clumsynite/blog-read'>Blog-Read</a> and <a class='link' target='_blank' href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</p>`,
-    purpose: ["CRUD Operations on Blog", "Authentication and Session handling"],
-    repo: "https://github.com/Clumsynite/blog-api",
-    live: "https://clumsy-blog.herokuapp.com/",
-    png: BlogAPIPNG,
-    gif: BlogAPIGIF,
-    languages: {
-      html: true,
-      js: true,
-      node: true,
-      pug: true,
-      mongo: true,
-    },
+    png: "/images/blog-write.png",
+    gif: "/images/blog-write.gif",
+    languages: ["html", "js", "bootstrap", "react"],
+    api: api.blog,
   },
   {
     title: "Inventory App",
@@ -91,15 +212,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/inventory-app",
     live: "https://clumsy-inventory.herokuapp.com/",
-    png: InventoryAppPNG,
-    gif: InventoryAppGIF,
-    languages: {
-      js: true,
-      bootstrap: true,
-      node: true,
-      pug: true,
-      mongo: true,
-    },
+    png: "/images/inventory-app.png",
+    gif: "/images/inventory-app.gif",
+    languages: ["js", "bootstrap", "node", "pug", "mongodb"],
   },
   {
     title: "React Shopping Cart",
@@ -110,9 +225,9 @@ const projects = [
     purpose: ["Practice using react-router-dom library"],
     repo: "https://github.com/Clumsynite/react-shopping-cart",
     live: "https://clumsynite.github.io/react-shopping-cart/",
-    png: ShoppingCartPNG,
-    gif: ShoppingCartGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
+    png: "/images/shopping-cart.png",
+    gif: "/images/shopping-cart.gif",
+    languages: ["html", "js", "bootstrap", "react"],
   },
   {
     title: "Anon Discussion",
@@ -127,15 +242,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/member-only",
     live: "https://anon-discussions.herokuapp.com/",
-    png: AnonDiscussionsPNG,
-    gif: AnonDiscussionsGIF,
-    languages: {
-      js: true,
-      bootstrap: true,
-      node: true,
-      pug: true,
-      mongo: true,
-    },
+    png: "/images/anon-discussions.png",
+    gif: "/images/anon-discussions.gif",
+    languages: ["js", "bootstrap", "node", "pug", "mongodb"],
   },
   {
     title: "React Memory Card",
@@ -149,9 +258,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/react-memory-card",
     live: "https://clumsynite.github.io/react-memory-card",
-    png: MemoryCardPNG,
-    gif: MemoryCardGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
+    png: "/images/memory-card.png",
+    gif: "/images/memory-card.gif",
+    languages: ["html", "js", "bootstrap", "react"],
   },
   {
     title: "React CV Project",
@@ -165,9 +274,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/react-cv-project",
     live: "https://clumsynite.github.io/react-cv-project/",
-    png: CVProjectPNG,
-    gif: CVProjectGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
+    png: "/images/cv-project.png",
+    gif: "/images/cv-project.gif",
+    languages: ["html", "js", "bootstrap", "react"],
   },
   {
     title: "Mini Message Board",
@@ -181,14 +290,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/mini-message-board",
     live: "https://mini-msg-board.herokuapp.com/",
-    png: MiniMsgPNG,
-    gif: MiniMsgGIF,
-    languages: {
-      js: true,
-      bootstrap: true,
-      node: true,
-      pug: true,
-    },
+    png: "/images/mini-messageboard.png",
+    gif: "/images/mini-messageboard.gif",
+    languages: ["js", "bootstrap", "node", "pug"],
   },
   {
     title: "Weather App",
@@ -202,14 +306,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/weather-app",
     live: "https://clumsynite.github.io/weather-app/",
-    png: WeatherAppPNG,
-    gif: WeatherAppGIF,
-    languages: {
-      html: true,
-      css: true,
-      js: true,
-      vue: true,
-    },
+    png: "/images/weather-app.png",
+    gif: "/images/weather-app.gif",
+    languages: ["html", "css", "js", "vue"],
   },
   {
     title: "Vue Library",
@@ -220,14 +319,9 @@ const projects = [
     purpose: ["Practice Vue Framework", "Use localStorage to store records."],
     repo: "https://github.com/Clumsynite/vue-library",
     live: "https://clumsynite.github.io/vue-library/",
-    png: VueLibraryPNG,
-    gif: VueLibraryGIF,
-    languages: {
-      html: true,
-      css: true,
-      js: true,
-      vue: true,
-    },
+    png: "/images/vue-library.png",
+    gif: "/images/vue-library.gif",
+    languages: ["html", "css", "js", "vue"],
   },
   {
     title: "React Task List",
@@ -241,9 +335,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/react-task-list",
     live: "https://clumsynite.github.io/react-task-list/",
-    png: TaskListPNG,
-    gif: TaskListGIF,
-    languages: { html: true, js: true, bootstrap: true, react: true },
+    png: "/images/js-tictactoe.png",
+    gif: "/images/js-tictactoe.gif",
+    languages: ["html", "js", "bootstrap", "react"],
   },
   {
     title: "Pomodoro Clock",
@@ -254,9 +348,9 @@ const projects = [
     purpose: ["FreeCodeCamp's Certification Project"],
     repo: "https://github.com/Clumsynite/js-pomodoro",
     live: "https://clumsynite.github.io/js-pomodoro/",
-    png: PomodoroClockPNG,
-    gif: PomodoroClockGIF,
-    languages: { html: true, css: true, js: true, react: true },
+    png: "/images/task-list.png",
+    gif: "/images/task-list.gif",
+    languages: ["html", "css", "js", "react"],
   },
   {
     title: "Restaurant Page",
@@ -271,14 +365,9 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/js-restaurant-page",
     live: "https://clumsynite.github.io/js-restaurant-page",
-    png: RestaurantPagePNG,
-    gif: RestaurantPageGIF,
-    languages: {
-      html: true,
-      css: true,
-      js: true,
-      webpack: true,
-    },
+    png: "/images/pomodoro-clock.png",
+    gif: "/images/pomodoro-clock.gif",
+    languages: ["html", "css", "js", "webpack"],
   },
   {
     title: "JS TicTacToe",
@@ -289,14 +378,8 @@ const projects = [
     purpose: ["Practice Factory functions", "Practice Module Pattern"],
     repo: "https://github.com/Clumsynite/js-tictactoe",
     live: "https://clumsynite.github.io/js-tictactoe",
-    png: JsTictactoePNG,
-    gif: JsTictactoeGIF,
-    languages: {
-      html: true,
-      css: true,
-      js: true,
-    },
+    png: "/images/restaurant-page.png",
+    gif: "/images/restaurant-page.gif",
+    languages: ["html", "css", "js"],
   },
 ];
-
-export default projects;
