@@ -1,14 +1,23 @@
-import React, { useEffect } from "react";
+import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
-import styles from "../styles/Common.module.css";
-import Layout from "../components/Layout";
 import ReactTyped from "react-typed";
 
+import styles from "../styles/Common.module.css";
+import Layout from "../components/Layout";
+import { ExtLink } from "../components/CommonComponents";
+
+import { ThemeContext } from "../context/Theme";
+
 const Home = () => {
+  const { theme } = useContext(ThemeContext);
+  const [mounted, setMounted] = useState(false);
+
   useEffect(() => {
+    setMounted(true);
     console.log("Hey there\nView the Source code here");
     console.log("https://github.com/Clumsynite/portfolio-v2");
   }, []);
+
   return (
     <Layout page={"Home"}>
       <div className={styles.container}>
@@ -19,15 +28,24 @@ const Home = () => {
         </Head>
 
         <main className={styles.main}>
-          <h1 className={styles.title}>
+          <h1 className={styles.title} onClick={() => console.log('theme', theme)}>
             Hello, this is{" "}
-            <a href="https://rishabhpathak.netlify.app/" target="_blank">
-              <ReactTyped
-                strings={["Rishabh Pathak"]}
-                typeSpeed={60}
-                showCursor={false}
-              />
-            </a>
+            <ExtLink
+              name={
+                !mounted ? (
+                  "Rishabh Pathak"
+                ) : (
+                  <ReactTyped
+                    strings={["Rishabh Pathak"]}
+                    typeSpeed={60}
+                    showCursor={false}
+                  />
+                )
+              }
+              title={"Link to my Previous website"}
+              to={"https://rishabhpathak.netlify.app/"}
+              dark={theme === "dark"}
+            />
           </h1>
         </main>
       </div>

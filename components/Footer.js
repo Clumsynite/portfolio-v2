@@ -1,5 +1,5 @@
 import React from "react";
-import { Icon } from "semantic-ui-react";
+import { ExtLink, Icon } from "./CommonComponents";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer({ dark }) {
@@ -7,20 +7,17 @@ export default function Footer({ dark }) {
     <footer className={styles.footer}>
       Made with
       <span style={{ padding: "0px 4px" }}>
-        <Icon name={"heart"} color="red" fitted inverted={dark} />
+        <Icon name={"fxemoji:beating-heart"} inline size={20} />
       </span>
       by
-      <a
-        aria-label="Link to Github Profile"
-        href="https://github.com/Clumsynite"
-        title="Github Profile"
-        className="link"
-        target="_blank"
-        rel="noreferrer"
+      <ExtLink
+        name={"Rishabh Pathak"}
+        title={"Link to my Github Profile"}
+        to={"https://github.com/Clumsynite"}
+        dark={dark}
         style={{ paddingLeft: 4 }}
-      >
-        Rishabh Pathak
-      </a>
+        className="link"
+      />
     </footer>
   );
 }
