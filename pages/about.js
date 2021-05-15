@@ -2,7 +2,7 @@ import Head from "next/head";
 import styles from "../styles/Common.module.css";
 import Layout from "../components/Layout";
 
-const Home = () => {
+const About = () => {
   return (
     <Layout page={"About"}>
       <div className={styles.container}>
@@ -22,4 +22,4 @@ const Home = () => {
   );
 };
 
-export default Home;
+export default About;
