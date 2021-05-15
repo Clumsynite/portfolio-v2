@@ -1,12 +1,18 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Typed from "react-typed";
 import * as ThemeConfig from "../config/theme";
 
 const Logo = ({ dark, mobile }) => {
   const [hover, setHover] = useState(false);
+  const [mounted, setMounted] = useState(false);
+
+  useEffect(() => {
+    setMounted(true);
+  }, []);
+
   return (
     <div
-      className="michroma"
+      className={mounted ? "michroma" : null}
       style={{
         textAlign: "center",
         height: mobile ? 28 : 40,
