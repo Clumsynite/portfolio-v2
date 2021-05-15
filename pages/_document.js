@@ -9,10 +9,7 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head>
-          <title>Rishabh's Portflio </title>
-          <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
-        </Head>
+        <Head />
         <body>
           <Main />
           <NextScript />

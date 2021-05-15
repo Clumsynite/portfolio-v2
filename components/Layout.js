@@ -1,7 +1,6 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { Container } from "semantic-ui-react";
-import "semantic-ui-css/semantic.min.css";
 
 import Navbar from "./Navbar";
 
