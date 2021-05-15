@@ -1,4 +1,5 @@
 import { Popup as SemanticPopup } from "semantic-ui-react";
+import { dark } from "../config/theme";
 
 export const Popup = ({ dark, content, children }) => (
   <SemanticPopup trigger={children} content={content} inverted={dark} />
@@ -13,4 +14,13 @@ export const Icon = ({ name, inline, size, ...rest }) => (
     data-height={size}
     {...rest}
   ></span>
+);
+
+export const ExtLink = ({ to, name, icon, title, dark, ...rest }) => (
+  <Popup content={title} dark={dark}>
+    <a href={to} target="_blank" rel="noreferrer" {...rest}>
+      {icon}
+      {name}
+    </a>
+  </Popup>
 );
