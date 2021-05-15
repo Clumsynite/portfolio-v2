@@ -19,22 +19,30 @@ const { MediaContextProvider, Media } = createMedia({
 
 const MenuItems = ({ page, mobile }) => (
   <>
-    <Menu.Item
-      link
-      active={"Home" === page}
-      style={{ marginLeft: mobile ? 0 : 50 }}
-    >
-      <Link href={"/"}>Home</Link>
-    </Menu.Item>
-    <Menu.Item link active={"Projects" === page}>
-      <Link href={"/projects"}>Projects</Link>
-    </Menu.Item>
-    <Menu.Item link active={"Contact" === page}>
-      <Link href={"/contact"}>Contact</Link>
-    </Menu.Item>
-    <Menu.Item link active={"About" === page}>
-      <Link href={"/about"}>About</Link>
-    </Menu.Item>
+    <Link href={"/"}>
+      <Menu.Item
+        link
+        active={"Home" === page}
+        style={{ marginLeft: mobile ? 0 : 50 }}
+      >
+        Home
+      </Menu.Item>
+    </Link>
+    <Link href={"/projects"}>
+      <Menu.Item link active={"Projects" === page}>
+        Projects
+      </Menu.Item>
+    </Link>
+    <Link href={"/contact"}>
+      <Menu.Item link active={"Contact" === page}>
+        Contact
+      </Menu.Item>
+    </Link>
+    <Link href={"/about"}>
+      <Menu.Item link active={"About" === page}>
+        About
+      </Menu.Item>
+    </Link>
   </>
 );
 
