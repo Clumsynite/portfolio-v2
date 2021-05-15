@@ -1,8 +1,12 @@
 import "../styles/globals.css";
-import "semantic-ui-css/semantic.min.css";
+import { ThemeProvider } from "../context/Theme";
 
 function MyApp({ Component, pageProps }) {
-  return <Component {...pageProps} />;
+  return (
+    <ThemeProvider>
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 }
 
 export default MyApp;

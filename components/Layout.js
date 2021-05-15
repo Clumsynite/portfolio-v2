@@ -1,7 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect } from "react";
 import { Container } from "semantic-ui-react";
-import { ThemeProvider } from "../context/Theme";
+import "semantic-ui-css/semantic.min.css";
 
 import Navbar from "./Navbar";
 
@@ -20,7 +20,7 @@ export default function Layout({ children, page }) {
         <link rel="icon" href="/favicon.ico" />
         <meta
           name="description"
-          content={`${name} Web development Portfolio. Built with Next.js`}
+          content={`${name}'s Web development Portfolio. Built with Next.js`}
         />
         {/* <meta
           property="og:image"
@@ -28,15 +28,12 @@ export default function Layout({ children, page }) {
         /> */}
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
-        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
       </Head>
-      <ThemeProvider>
-        <Navbar page={page}>
-          <Container fluid>
-            <main>{children}</main>
-          </Container>
-        </Navbar>
-      </ThemeProvider>
+      <Navbar page={page}>
+        <Container fluid>
+          <main>{children}</main>
+        </Container>
+      </Navbar>
     </div>
   );
 }
