@@ -28,6 +28,7 @@ export default function Layout({ children, page }) {
         /> */}
         <meta name="og:title" content={siteTitle} />
         <meta name="twitter:card" content="summary_large_image" />
+        <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
       </Head>
       <ThemeProvider>
         <Navbar page={page}>
