@@ -27,14 +27,10 @@ function ThemeProvider(props) {
     document.documentElement.style.setProperty(key, value);
 
   useEffect(() => {
-    if (typeof window !== "undefined" && !initialState) {
-      window.localStorage.setItem("theme", "dark");
-    }
-
-    setTheme(localStorage.theme || "dark");
+    setTheme(localStorage.theme);
   }, []);
 
-  const setTheme = (theme) => {
+  const setTheme = (theme = "dark") => {
     setCSSRoot("--main-bg", ThemeConfig[theme].bg);
     setCSSRoot("--main-fg", ThemeConfig[theme].fg);
     window.localStorage.setItem("theme", theme);
