@@ -28,7 +28,7 @@ const Home = () => {
         </Head>
 
         <main className={styles.main}>
-          <h1 className={styles.title} onClick={() => console.log('theme', theme)}>
+          <h1 className={styles.title}>
             Hello, this is{" "}
             <ExtLink
               name={
