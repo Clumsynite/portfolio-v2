@@ -1,5 +1,5 @@
 import Head from "next/head";
-import React, { useState, useEffect } from "react";
+import React from "react";
 import { Container } from "semantic-ui-react";
 
 import Navbar from "./Navbar";
@@ -8,11 +8,6 @@ const name = "Rishabh Pathak";
 export const siteTitle = `${name} Portfolio`;
 
 export default function Layout({ children, page }) {
-  const [mounted, setMounted] = useState(false);
-  useEffect(() => setMounted(true), []);
-
-  if (!mounted) return false;
-
   return (
     <div>
       <Head>
