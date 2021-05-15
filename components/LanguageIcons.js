@@ -1,27 +1,23 @@
 import * as _ from "lodash";
 import { Popup, Icon } from "./CommonComponents";
 
-const LanguageIcon = ({ language, size, dark, inline }) => {
-  console.log("LANGUAGE", _.has(languages, language), languages, language);
-  return (
-    _.hasIn(languages, language) && (
-      <Popup
-        content={_.get(
-          languages,
-          `${language}.name`,
-          "ant-design:exclamation-circle-outlined"
-        )}
-        dark={dark}
-      >
-        <Icon
-          name={_.get(languages, `${language}.icon`)}
-          inline={inline ? null : "false"}
-          size={size}
-        />
-      </Popup>
-    )
+const LanguageIcon = ({ language, size, dark, inline }) =>
+  _.hasIn(languages, language) && (
+    <Popup
+      content={_.get(
+        languages,
+        `${language}.name`,
+        "ant-design:exclamation-circle-outlined"
+      )}
+      dark={dark}
+    >
+      <Icon
+        name={_.get(languages, `${language}.icon`)}
+        inline={inline ? null : "false"}
+        size={size}
+      />
+    </Popup>
   );
-};
 
 export default LanguageIcon;
 
