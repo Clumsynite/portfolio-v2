@@ -1,14 +1,21 @@
-import React from "react";
+import React, { useState, useEffect } from "react";
 import { ExtLink, Icon } from "./CommonComponents";
 import styles from "../styles/Footer.module.css";
 
 export default function Footer({ dark }) {
+  const [mounted, setMounted] = useState(false);
+  useEffect(() => setMounted(true), []);
   return (
     <footer className={styles.footer}>
       Made with
-      <span style={{ padding: "0px 4px" }}>
-        <Icon name={"fxemoji:beating-heart"} inline size={20} />
-      </span>
+      {mounted && (
+        <Icon
+          name={"fxemoji:beating-heart"}
+          inline
+          size={20}
+          style={{ margin: "0px 4px" }}
+        />
+      )}
       by
       <ExtLink
         name={"Rishabh Pathak"}
