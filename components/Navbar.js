@@ -4,7 +4,6 @@ import { Container, Icon, Menu, Sidebar } from "semantic-ui-react";
 import Link from "next/link";
 
 import ThemeSwitcher from "./ThemeSwitcher";
-import { ThemeContext } from "../context/Theme";
 import Logo from "./Logo";
 import * as ThemeConfig from "../config/theme";
 import Footer from "./Footer";
@@ -131,21 +130,11 @@ const MobileContainer = ({ children, dark, page }) => {
   );
 };
 
-const ResponsiveContainer = ({ children, page }) => {
-  const { theme } = useContext(ThemeContext);
-
+const ResponsiveContainer = ({ children, page, dark }) => {
   return (
     <MediaContextProvider>
-      <DesktopContainer
-        children={children}
-        page={page}
-        dark={theme === "dark"}
-      />
-      <MobileContainer
-        children={children}
-        page={page}
-        dark={theme === "dark"}
-      />
+      <DesktopContainer children={children} page={page} dark={dark} />
+      <MobileContainer children={children} page={page} dark={dark} />
     </MediaContextProvider>
   );
 };
