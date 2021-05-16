@@ -15,7 +15,7 @@ export default function Layout({ children, page }) {
 
   return (
     mounted && (
-      <div style={{ transition: "0.3s linear" }}>
+      <div>
         <Head>
           <link rel="icon" href="/favicon.ico" />
           <meta
