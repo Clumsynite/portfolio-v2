@@ -49,3 +49,9 @@ img {
 .michroma {
   font-family: "Michroma", sans-serif;
 }
+
+.main-container {
+  min-height: 100vh;
+  padding: 0 0.5rem;
+  padding-top: 60px;
+}

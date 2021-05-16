@@ -34,7 +34,6 @@ const api = {
     repo: "http://github.com/clumsynite/bank-system-api",
     live: "https://bank-system-api.herokuapp.com/",
     languages: ["js", "sql", "express", "node", "passport"],
-    api: api.bank,
   },
   messenger: {
     title: "Clumsy-Messenger-Api",
@@ -61,7 +60,7 @@ const api = {
   },
 };
 
-export default projects = [
+const projects = [
   {
     title: "Short-Links",
     desc: `<p>
@@ -383,3 +382,5 @@ export default projects = [
     languages: ["html", "css", "js"],
   },
 ];
+
+export default projects;
