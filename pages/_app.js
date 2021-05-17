@@ -13,6 +13,10 @@ function MyApp({ Component, pageProps }) {
           defer
           src="https://code.iconify.design/1/1.0.7/iconify.min.js"
         ></script>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0"
+        />
       </Head>
       <Component {...pageProps} />
     </ThemeProvider>
