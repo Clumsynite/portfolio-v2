@@ -334,8 +334,8 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/react-task-list",
     live: "https://clumsynite.github.io/react-task-list/",
-    png: "/images/js-tictactoe.png",
-    gif: "/images/js-tictactoe.gif",
+    png: "/images/task-list.png",
+    gif: "/images/task-list.gif",
     languages: ["html", "js", "bootstrap", "react"],
   },
   {
@@ -347,8 +347,8 @@ const projects = [
     purpose: ["FreeCodeCamp's Certification Project"],
     repo: "https://github.com/Clumsynite/js-pomodoro",
     live: "https://clumsynite.github.io/js-pomodoro/",
-    png: "/images/task-list.png",
-    gif: "/images/task-list.gif",
+    png: "/images/pomodoro-clock.png",
+    gif: "/images/pomodoro-clock.gif",
     languages: ["html", "css", "js", "react"],
   },
   {
@@ -364,8 +364,8 @@ const projects = [
     ],
     repo: "https://github.com/Clumsynite/js-restaurant-page",
     live: "https://clumsynite.github.io/js-restaurant-page",
-    png: "/images/pomodoro-clock.png",
-    gif: "/images/pomodoro-clock.gif",
+    png: "/images/restaurant-page.png",
+    gif: "/images/restaurant-page.gif",
     languages: ["html", "css", "js", "webpack"],
   },
   {
@@ -377,8 +377,8 @@ const projects = [
     purpose: ["Practice Factory functions", "Practice Module Pattern"],
     repo: "https://github.com/Clumsynite/js-tictactoe",
     live: "https://clumsynite.github.io/js-tictactoe",
-    png: "/images/restaurant-page.png",
-    gif: "/images/restaurant-page.gif",
+    png: "/images/js-tictactoe.png",
+    gif: "/images/js-tictactoe.gif",
     languages: ["html", "css", "js"],
   },
 ];
