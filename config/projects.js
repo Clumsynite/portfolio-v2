@@ -10,10 +10,13 @@
   - short-links
 */
 
+const descriptionClass = "project-description";
+const descriptionElement = "div";
+
 const api = {
   blog: {
     title: "Blog-API",
-    desc: `<p>RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank' href='https://github.com/Clumsynite/blog-read'>Blog-Read</a> and <a class='link' target='_blank' href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</p>`,
+    desc: `<${descriptionElement} class=${descriptionClass} >RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank' href='https://github.com/Clumsynite/blog-read'>Blog-Read</a> and <a class='link' target='_blank' href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</${descriptionElement}>`,
     purpose: ["CRUD Operations on Blog", "Authentication and Session handling"],
     repo: "https://github.com/Clumsynite/blog-api",
     live: "https://clumsy-blog.herokuapp.com/",
@@ -23,9 +26,9 @@ const api = {
   },
   bank: {
     title: "Bank-System-Api",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         A simple banking system, with a database <i>Bank</i> with 2 tables user & accounts. Users table will have all users(bankers & customers).Accounts table will have all the entries of cash deposited & withdrawn.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Handle SQL database with 2 tables user and accounts",
       "Manage authentication by two types of user: Banker & Customer, where banker has admin privileges",
@@ -37,9 +40,9 @@ const api = {
   },
   messenger: {
     title: "Clumsy-Messenger-Api",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Api for Clumsy-messenger-app.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Handle Socket server",
       "Handle Authentication",
@@ -51,9 +54,9 @@ const api = {
   },
   merng: {
     title: "Fcc-Merng-Api",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Built after following <a href="https://www.youtube.com/watch?v=n1mdAPFq2Os" target="_blank">this</a> course video.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Handle mongodb and grahql for mutations and queries"],
     repo: "https://github.com/Clumsynite/fcc-merng-api",
     languages: ["js", "express", "node", "graphql", "apollo", "mongodb"],
@@ -63,9 +66,9 @@ const api = {
 const projects = [
   {
     title: "Short-Links",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Another Url Shortener
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Message any registered user"],
     repo: "https://github.com/Clumsynite/react-markdown-notes",
     live: "http://clumsynite.github.io/react-markdown-notes",
@@ -73,9 +76,9 @@ const projects = [
   },
   {
     title: "Fcc-Merng-App",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Built after following <a href="https://www.youtube.com/watch?v=n1mdAPFq2Os" target="_blank">this</a> course video.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Create posts", "Like and comment on other people's posts"],
     repo: "https://github.com/Clumsynite/fcc-merng-app",
     languages: ["react", "semanticui", "graphql", "apollo"],
@@ -83,9 +86,9 @@ const projects = [
   },
   {
     title: "Markdown-Notes",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Create Notes in Markdown and save them to localStorage. Built in React.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Add notes in markdown",
       "saves data to localStorage",
@@ -97,9 +100,9 @@ const projects = [
   },
   {
     title: "Clumsy-Messenger-App",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass}>
         A real-time messaging app. Built with sockets.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Message any registered user",
       "Sends realtime messages",
@@ -112,9 +115,9 @@ const projects = [
   },
   {
     title: "Clumsy-Crypto",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         A Progressive Web App which displays Realtime Price information about BTC, ETH and LTC
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Checking out how a progressive web app works",
       "Get realtime rates of BTC, ETH, and LTC",
@@ -125,9 +128,9 @@ const projects = [
   },
   {
     title: "Bank-System-App",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         A simple banking system, with a database <i>Bank</i> with 2 tables user & accounts. Users table will have all users(bankers & customers).Accounts table will have all the entries of cash deposited & withdrawn.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Frontend to authenticate banker & customer",
       "Handle login state from frontend",
@@ -141,9 +144,9 @@ const projects = [
   },
   {
     title: "Portfolio",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         My portfolio to highlight my skills and projects.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Built on react to show the projects I made"],
     repo: "https://github.com/Clumsynite/portfolio",
     live: "https://rishabhpathak.netlify.app/",
@@ -151,10 +154,9 @@ const projects = [
   },
   {
     title: "Clumsy-bot",
-    desc: `
-    <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
       A discord bot built to try the library, discord.js.
-    </p>`,
+    </${descriptionElement}>`,
     purpose: [
       "User can send gifs though chat by using the keys: <code>!gif <name></code>",
       "The word <code>Bye</code> <i>(case insensitive)</i>, in any sentence or as a single word will return this https://tenor.com/view/bye-slide-baby-later-peace-out-gif-12999722 gif",
@@ -166,12 +168,11 @@ const projects = [
   },
   {
     title: "Blog-Read",
-    desc: `
-    <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
       Frontend built to <i>read blog posts</i>.
       <br/>
       Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'>Blog API</a> for authentication and database management.
-    </p>`,
+    </${descriptionElement}>`,
     purpose: [
       "User can Read Blog posts by other people",
       "User can comment on Blog Posts",
@@ -186,9 +187,9 @@ const projects = [
   },
   {
     title: "Blog-Write",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Frontend built to <i>make new posts</i>.<br/>Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'>Blog API</a> for authentication and database management.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "User can create new blog posts",
       "User can manage their posts and comments",
@@ -202,9 +203,9 @@ const projects = [
   },
   {
     title: "Inventory App",
-    desc: `<p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Crud App for inventory Management.<br/>Built in order to practice databse management by trying out basic CRUD operations on MongoDB.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Trying out CRUD operations using MongoDB",
       "Practe routing using Node & Express",
@@ -217,10 +218,9 @@ const projects = [
   },
   {
     title: "React Shopping Cart",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         A dummy store built to practice routing in react.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Practice using react-router-dom library"],
     repo: "https://github.com/Clumsynite/react-shopping-cart",
     live: "https://clumsynite.github.io/react-shopping-cart/",
@@ -230,10 +230,9 @@ const projects = [
   },
   {
     title: "Anon Discussion",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Anon Discussions is an anonymous message board, where messages can be viewed by anyone who visits the site but, they'll not be able to see who posted the message.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Building an anonymous (member-only) forum",
       "Practicing authentication using PassportJS",
@@ -247,10 +246,9 @@ const projects = [
   },
   {
     title: "React Memory Card",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         This is an avengers themed mini game, where the user will have to click a card from the provided card list. When clicked, your score will increase by one and the cards will be shuffled.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Practice React hooks for the first time",
       "Practice maintaining state across components",
@@ -263,10 +261,9 @@ const projects = [
   },
   {
     title: "React CV Project",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Simple CV Application which'll render your CV detail as cards.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Practice maintaining state across components",
       "Form validation and manipulation",
@@ -279,10 +276,9 @@ const projects = [
   },
   {
     title: "Mini Message Board",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Simple Express App built to practice routes and sending data across routes.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Pactice Routes in express",
       "Try to successfully render form data",
@@ -295,10 +291,9 @@ const projects = [
   },
   {
     title: "Weather App",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Weather APp with Gif backgrounds, which change according to the weather.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Use OpenWeatherMapAPI ro fetch weather details",
       "Use Giphy API to fetch gif according to the weather",
@@ -311,10 +306,9 @@ const projects = [
   },
   {
     title: "Vue Library",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Library APP built to keep a record of the user's books
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Practice Vue Framework", "Use localStorage to store records."],
     repo: "https://github.com/Clumsynite/vue-library",
     live: "https://clumsynite.github.io/vue-library/",
@@ -324,10 +318,9 @@ const projects = [
   },
   {
     title: "React Task List",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         React app built to practice react basics
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Practice state manipulation",
       "Practice event handling in React",
@@ -340,10 +333,9 @@ const projects = [
   },
   {
     title: "Pomodoro Clock",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         Pomodoro Clock, which works on the concept of <a href="https://en.wikipedia.org/wiki/Pomodoro_Technique" target="_blank" class="link">Pomodoro Technique</a>.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["FreeCodeCamp's Certification Project"],
     repo: "https://github.com/Clumsynite/js-pomodoro",
     live: "https://clumsynite.github.io/js-pomodoro/",
@@ -353,10 +345,9 @@ const projects = [
   },
   {
     title: "Restaurant Page",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         A demo Restaurant page. An SPA which uses modules to manipulate DOM using JS. <br/><code>No Framework used</code>
-      </p>`,
+      </${descriptionElement}>`,
     purpose: [
       "Practice Factory functions",
       "Practice building apps using Webpack",
@@ -370,10 +361,9 @@ const projects = [
   },
   {
     title: "JS TicTacToe",
-    desc: `
-      <p>
+    desc: `<${descriptionElement} class=${descriptionClass} >
         <b>Tic-Tac-Toe</b> <span class='badge badge-pill badge-light'>AKA</span> <i>X and O</i>, built using Javascript.
-      </p>`,
+      </${descriptionElement}>`,
     purpose: ["Practice Factory functions", "Practice Module Pattern"],
     repo: "https://github.com/Clumsynite/js-tictactoe",
     live: "https://clumsynite.github.io/js-tictactoe",
