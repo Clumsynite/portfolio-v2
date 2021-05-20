@@ -29,14 +29,16 @@ export const ProjectCard = ({ project, dark }) => {
         <div className={styles.thumbnail}>
           {png ? (
             <Image
-              className={styles.image}
               src={png}
+              className={styles.image}
               height={imageSize.height}
               width={imageSize.width}
+              objectFit="cover"
             />
           ) : (
             <Image
               src={"/images/blog-read.png"}
+              className={styles.image}
               height={imageSize.height}
               width={imageSize.width}
             />
