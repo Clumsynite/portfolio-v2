@@ -3,16 +3,13 @@ import { Popup, Icon } from "./CommonComponents";
 
 const LanguageIcon = ({ language, size, dark, inline }) =>
   _.hasIn(languages, language) && (
-    <Popup
-      content={_.get(
-        languages,
-        `${language}.name`,
-        "ant-design:exclamation-circle-outlined"
-      )}
-      dark={dark}
-    >
+    <Popup content={_.get(languages, `${language}.name`)} dark={dark}>
       <Icon
-        name={_.get(languages, `${language}.icon`)}
+        name={_.get(
+          languages,
+          `${language}.icon`,
+          "ant-design:exclamation-circle-outlined"
+        )}
         inline={inline ? null : "false"}
         size={size}
       />
@@ -22,10 +19,10 @@ const LanguageIcon = ({ language, size, dark, inline }) =>
 export default LanguageIcon;
 
 const languages = {
-  html: { icon: "logos:html-5", name: "Html" },
+  html: { icon: "logos:html-5", name: "HTML" },
   css: { icon: "logos:css-3", name: "CSS" },
   js: { icon: "logos:javascript", name: "Javascript" },
-  js: { icon: "logos:typescipt-icon", name: "Typescript" },
+  ts: { icon: "logos:typescipt-icon", name: "Typescript" },
   react: { icon: "logos:react", name: "React" },
   vue: { icon: "logos:vue", name: "Vue" },
   node: { icon: "logos:nodejs", name: "NodeJS" },

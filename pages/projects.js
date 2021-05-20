@@ -1,6 +1,5 @@
 import React, { useContext } from "react";
 import Head from "next/head";
-import { SpringGrid, layout, measureItems } from "react-stonecutter";
 
 import styles from "../styles/Projects.module.css";
 import Layout from "../components/Layout";
