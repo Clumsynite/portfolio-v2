@@ -31,13 +31,6 @@
   white-space: normal;
 }
 
-.container:hover {
-  box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px, rgba(0, 0, 0, 0.23) 0px 6px 6px;
-  transform: scale(1.2);
-  background-color: var(--main-bg);
-  z-index: 2;
-}
-
 .flexRow {
   display: flex;
   flex-direction: row;
@@ -57,7 +50,17 @@
   transition: 0.3s ease-in-out;
 }
 
-.tags span:hover {
-  background-color: hsla(0, 0%, 98%, 0.315);
-  border-radius: 6px;
+@media (hover: hover) {
+  .container:hover {
+    box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
+      rgba(0, 0, 0, 0.23) 0px 6px 6px;
+    transform: scale(1.2);
+    background-color: var(--main-bg);
+    z-index: 2;
+  }
+
+  .tags span:hover {
+    background-color: hsla(0, 0%, 98%, 0.315);
+    border-radius: 6px;
+  }
 }
