@@ -13,12 +13,12 @@ const ProjectCard = ({ project, dark }) => {
 
   const Tags = ({ languages, title }) =>
     languages.map((language, index) => (
-        <LanguageIcons
-          key={`${title}.${languages.length}.${language}.${index}`}
-          language={language}
-          size={16}
-          dark={dark}
-        />
+      <LanguageIcons
+        key={`${title}.${languages.length}.${language}.${index}`}
+        language={language}
+        size={22}
+        dark={dark}
+      />
     ));
 
   return (

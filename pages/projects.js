@@ -1,14 +1,12 @@
 import React, { useContext } from "react";
 import Head from "next/head";
+import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 import styles from "../styles/Projects.module.css";
 import Layout from "../components/Layout";
-import LanguageIcon from "../components/LanguageIcons";
 import { ThemeContext } from "../context/Theme";
 import projects from "../config/projects";
 import ProjectCard from "../components/ProjectCard";
-import { Grid } from "semantic-ui-react";
-import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
 export async function getStaticProps() {
   return {
@@ -21,10 +19,9 @@ export async function getStaticProps() {
 const Projects = ({ projects }) => {
   const { theme } = useContext(ThemeContext);
 
-
   const ProjectGrid = ({ dark }) => {
     return (
-      <ResponsiveMasonry columnsCountBreakPoints={{350: 1, 750: 2, 900: 3}}>
+      <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
         <Masonry gutter={"10px"}>
           {projects.map(
             (project, index) =>
@@ -39,7 +36,7 @@ const Projects = ({ projects }) => {
 
   return (
     <Layout page={"Projects"}>
-      <div>
+      <div className={styles.container}>
         <Head>
           <title>Rishabh's Portflio - Projects</title>
           <meta

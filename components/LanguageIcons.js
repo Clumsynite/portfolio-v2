@@ -3,16 +3,18 @@ import { Popup, Icon } from "./CommonComponents";
 
 const LanguageIcon = ({ language, size, dark, inline }) =>
   _.hasIn(languages, language) && (
-    <Popup content={_.get(languages, `${language}.name`)} dark={dark}>
-      <Icon
-        name={_.get(
-          languages,
-          `${language}.icon`,
-          "ant-design:exclamation-circle-outlined"
-        )}
-        inline={inline ? null : "false"}
-        size={size}
-      />
+    <Popup content={_.get(languages, `${language}.name`, language)} dark={dark}>
+      <span>
+        <Icon
+          name={_.get(
+            languages,
+            `${language}.icon`,
+            "ant-design:exclamation-circle-outlined"
+          )}
+          inline={inline ? null : "false"}
+          size={size}
+        />
+      </span>
     </Popup>
   );
 

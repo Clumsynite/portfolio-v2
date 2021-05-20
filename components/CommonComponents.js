@@ -1,5 +1,4 @@
 import { Popup as SemanticPopup } from "semantic-ui-react";
-import Interweave from "interweave";
 
 export const Popup = ({ dark, content, children }) => (
   <SemanticPopup trigger={children} content={content} inverted={dark} />
