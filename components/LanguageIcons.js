@@ -24,7 +24,7 @@ const languages = {
   html: { icon: "logos:html-5", name: "HTML" },
   css: { icon: "logos:css-3", name: "CSS" },
   js: { icon: "logos:javascript", name: "Javascript" },
-  ts: { icon: "logos:typescipt-icon", name: "Typescript" },
+  ts: { icon: "logos:typescript-icon", name: "Typescript" },
   react: { icon: "logos:react", name: "React" },
   vue: { icon: "logos:vue", name: "Vue" },
   node: { icon: "logos:nodejs", name: "NodeJS" },
