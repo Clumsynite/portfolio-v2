@@ -17,6 +17,7 @@
 .thumbnail {
   padding: 30px 20px;
   position: relative;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .content {
@@ -79,7 +80,7 @@
     visibility: hidden;
   }
 
-  .container:hover  .links {
+  .container:hover .links {
     height: auto;
     max-height: 100px;
     visibility: visible;
