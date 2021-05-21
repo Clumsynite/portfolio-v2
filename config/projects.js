@@ -16,12 +16,11 @@ const descriptionElement = "div";
 const api = {
   blog: {
     title: "Blog-API",
-    desc: `<${descriptionElement} class=${descriptionClass} >RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank' href='https://github.com/Clumsynite/blog-read'>Blog-Read</a> and <a class='link' target='_blank' href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</${descriptionElement}>`,
+    desc: `<${descriptionElement} class=${descriptionClass} >RESTful API built with endpoints for authentication and database management.<br/><a class='link' target='_blank'  rel="noreferrer"  href='https://github.com/Clumsynite/blog-read' data-title='Blog-Read' data-content='Link to Blog-Read client'>Blog-Read</a> and <a class='link' target='_blank'  rel="noreferrer"  href='https://github.com/Clumsynite/blog-write'>Blog-Write</a> work as Frontend for this API.</${descriptionElement}>`,
     purpose: ["CRUD Operations on Blog", "Authentication and Session handling"],
     repo: "https://github.com/Clumsynite/blog-api",
     live: "https://clumsy-blog.herokuapp.com/",
     png: "/images/blog-api.png",
-    gif: "/images/blog-api.gif",
     languages: ["js", "node", "pug", "mongodb", "passport"],
   },
   bank: {
@@ -171,7 +170,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
       Frontend built to <i>read blog posts</i>.
       <br/>
-      Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'>Blog API</a> for authentication and database management.
+      Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'  rel="noreferrer" data-title='Blog-Read' data-content='Link to Blog-Read client' >Blog API</a> for authentication and database management.
     </${descriptionElement}>`,
     purpose: [
       "User can Read Blog posts by other people",
@@ -181,14 +180,13 @@ const projects = [
     repo: "https://github.com/Clumsynite/blog-read",
     live: "https://clumsynite.github.io/blog-read/",
     png: "/images/blog-read.png",
-    gif: "/images/blog-read.gif",
     languages: ["html", "js", "bootstrap", "react"],
     api: api.blog,
   },
   {
     title: "Blog-Write",
     desc: `<${descriptionElement} class=${descriptionClass} >
-        Frontend built to <i>make new posts</i>.<br/>Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'>Blog API</a> for authentication and database management.
+        Frontend built to <i>make new posts</i>.<br/>Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'  rel="noreferrer" >Blog API</a> for authentication and database management.
       </${descriptionElement}>`,
     purpose: [
       "User can create new blog posts",
@@ -197,7 +195,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/blog-write",
     live: "https://clumsynite.github.io/blog-write/",
     png: "/images/blog-write.png",
-    gif: "/images/blog-write.gif",
     languages: ["html", "js", "bootstrap", "react"],
     api: api.blog,
   },
@@ -213,7 +210,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/inventory-app",
     live: "https://clumsy-inventory.herokuapp.com/",
     png: "/images/inventory-app.png",
-    gif: "/images/inventory-app.gif",
     languages: ["js", "bootstrap", "node", "pug", "mongodb"],
   },
   {
@@ -225,7 +221,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/react-shopping-cart",
     live: "https://clumsynite.github.io/react-shopping-cart/",
     png: "/images/shopping-cart.png",
-    gif: "/images/shopping-cart.gif",
     languages: ["html", "js", "bootstrap", "react"],
   },
   {
@@ -241,7 +236,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/member-only",
     live: "https://anon-discussions.herokuapp.com/",
     png: "/images/anon-discussions.png",
-    gif: "/images/anon-discussions.gif",
     languages: ["js", "bootstrap", "node", "pug", "mongodb"],
   },
   {
@@ -256,7 +250,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/react-memory-card",
     live: "https://clumsynite.github.io/react-memory-card",
     png: "/images/memory-card.png",
-    gif: "/images/memory-card.gif",
     languages: ["html", "js", "bootstrap", "react"],
   },
   {
@@ -271,7 +264,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/react-cv-project",
     live: "https://clumsynite.github.io/react-cv-project/",
     png: "/images/cv-project.png",
-    gif: "/images/cv-project.gif",
     languages: ["html", "js", "bootstrap", "react"],
   },
   {
@@ -286,7 +278,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/mini-message-board",
     live: "https://mini-msg-board.herokuapp.com/",
     png: "/images/mini-messageboard.png",
-    gif: "/images/mini-messageboard.gif",
     languages: ["js", "bootstrap", "node", "pug"],
   },
   {
@@ -301,7 +292,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/weather-app",
     live: "https://clumsynite.github.io/weather-app/",
     png: "/images/weather-app.png",
-    gif: "/images/weather-app.gif",
     languages: ["html", "css", "js", "vue"],
   },
   {
@@ -313,7 +303,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/vue-library",
     live: "https://clumsynite.github.io/vue-library/",
     png: "/images/vue-library.png",
-    gif: "/images/vue-library.gif",
     languages: ["html", "css", "js", "vue"],
   },
   {
@@ -328,7 +317,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/react-task-list",
     live: "https://clumsynite.github.io/react-task-list/",
     png: "/images/task-list.png",
-    gif: "/images/task-list.gif",
     languages: ["html", "js", "bootstrap", "react"],
   },
   {
@@ -340,7 +328,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/js-pomodoro",
     live: "https://clumsynite.github.io/js-pomodoro/",
     png: "/images/pomodoro-clock.png",
-    gif: "/images/pomodoro-clock.gif",
     languages: ["html", "css", "js", "react"],
   },
   {
@@ -356,7 +343,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/js-restaurant-page",
     live: "https://clumsynite.github.io/js-restaurant-page",
     png: "/images/restaurant-page.png",
-    gif: "/images/restaurant-page.gif",
     languages: ["html", "css", "js", "webpack"],
   },
   {
@@ -368,7 +354,6 @@ const projects = [
     repo: "https://github.com/Clumsynite/js-tictactoe",
     live: "https://clumsynite.github.io/js-tictactoe",
     png: "/images/js-tictactoe.png",
-    gif: "/images/js-tictactoe.gif",
     languages: ["html", "css", "js"],
   },
 ];
