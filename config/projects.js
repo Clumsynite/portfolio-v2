@@ -149,7 +149,7 @@ const projects = [
     purpose: ["Built on react to show the projects I made"],
     repo: "https://github.com/Clumsynite/portfolio",
     live: "https://rishabhpathak.netlify.app/",
-    languages: ["react", "bootstrap", "nodemailer", "css"],
+    languages: ["react", "bootstrap", "css"],
   },
   {
     title: "Clumsy-bot",
