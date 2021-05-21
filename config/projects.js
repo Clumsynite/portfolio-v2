@@ -69,8 +69,9 @@ const projects = [
         Another Url Shortener
       </${descriptionElement}>`,
     purpose: ["Message any registered user"],
-    repo: "https://github.com/Clumsynite/react-markdown-notes",
-    live: "http://clumsynite.github.io/react-markdown-notes",
+    png: "/images/short-links.png",
+    repo: "https://github.com/Clumsynite/short-links",
+    live: "https://vercel.com/clumsynite/short-links/",
     languages: ["react", "next", "ts", "ant", "mongodb"],
   },
   {
