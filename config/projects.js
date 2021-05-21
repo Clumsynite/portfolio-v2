@@ -58,6 +58,7 @@ const api = {
       </${descriptionElement}>`,
     purpose: ["Handle mongodb and grahql for mutations and queries"],
     repo: "https://github.com/Clumsynite/fcc-merng-api",
+    live: "https://fcc-merng-api.herokuapp.com/",
     languages: ["js", "express", "node", "graphql", "apollo", "mongodb"],
   },
 };
@@ -80,7 +81,9 @@ const projects = [
         Built after following <a href="https://www.youtube.com/watch?v=n1mdAPFq2Os" target="_blank">this</a> course video.
       </${descriptionElement}>`,
     purpose: ["Create posts", "Like and comment on other people's posts"],
+    png: "/images/fcc-merng-app.png",
     repo: "https://github.com/Clumsynite/fcc-merng-app",
+    live: "https://fcc-merng.netlify.app/",
     languages: ["react", "semanticui", "graphql", "apollo"],
     api: api.merng,
   },
