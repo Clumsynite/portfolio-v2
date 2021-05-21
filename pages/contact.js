@@ -7,7 +7,7 @@ const Contact = () => {
     <Layout page={"Contact"}>
       <div className={styles.container}>
         <Head>
-          <title>Rishabh's Portflio - Contact</title>
+          <title>Rishabh Pathak's Portfolio - Contact</title>
           <meta name="description" content="Ways to contact Rishabh Pathak" />
           <link rel="icon" href="/favicon.ico" />
         </Head>

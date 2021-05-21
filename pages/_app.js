@@ -8,7 +8,7 @@ function MyApp({ Component, pageProps }) {
   return (
     <ThemeProvider>
       <Head>
-        <title>Rishabh's Portfolio</title>
+        <title>Rishabh Pathak's Portfolio</title>
         <script
           defer
           src="https://code.iconify.design/1/1.0.7/iconify.min.js"

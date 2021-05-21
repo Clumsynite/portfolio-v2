@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import Image from "next/image";
 import * as _ from "lodash";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
@@ -27,22 +27,15 @@ export const ProjectCard = ({ project, dark }) => {
     <div className={styles.container}>
       <div className={styles.box}>
         <div className={styles.thumbnail}>
-          {png ? (
-            <Image
-              src={png}
-              className={styles.image}
-              height={imageSize.height}
-              width={imageSize.width}
-              objectFit="cover"
-            />
-          ) : (
-            <Image
-              src={"/images/blog-read.png"}
-              className={styles.image}
-              height={imageSize.height}
-              width={imageSize.width}
-            />
-          )}
+          <Image
+            src={png}
+            className={styles.image}
+            height={imageSize.height}
+            width={imageSize.width}
+            objectFit="cover"
+            alt={title}
+            title={`${title} - Screenshot`}
+          />
         </div>
         <div className={styles.content}>
           <h2 className={styles.name}>{title}</h2>

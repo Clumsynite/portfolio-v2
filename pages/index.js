@@ -22,11 +22,10 @@ const Home = () => {
     <Layout page={"Home"}>
       <div className={styles.container}>
         <Head>
-          <title>Rishabh's Portflio - Home</title>
-          <meta name="description" content="Rishabh Pathak's portfolio 2021." />
+          <title>Rishabh Pathak's Portfolio - Home</title>
+          <meta name="description" content="This is the homepage of Rishabh Pathak's portfolio 2021." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
-
         <main className={styles.main}>
           <h1 className={styles.title}>
             Hello, this is{" "}

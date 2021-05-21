@@ -22,10 +22,10 @@ const Projects = ({ projects }) => {
     <Layout page={"Projects"}>
       <div className={styles.container}>
         <Head>
-          <title>Rishabh's Portflio - Projects</title>
+          <title>Rishabh Pathak's Portfolio - Projects</title>
           <meta
             name="description"
-            content="View Rishabh Pathak's recent projects here"
+            content="View Rishabh Pathak's recent projects here. "
           />
           <link rel="icon" href="/favicon.ico" />
         </Head>

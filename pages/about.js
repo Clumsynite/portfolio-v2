@@ -7,7 +7,7 @@ const About = () => {
     <Layout page={"About"}>
       <div className={styles.container}>
         <Head>
-          <title>Rishabh's Portflio - About</title>
+          <title>Rishabh Pathak's Portfolio - About</title>
           <meta
             name="description"
             content="Know more about Rishabh Pathak here"

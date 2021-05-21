@@ -17,7 +17,7 @@ export const Icon = ({ name, inline, size, ...rest }) => (
 
 export const ExtLink = ({ to, name, icon, title, dark, ...rest }) => (
   <Popup content={title} dark={dark}>
-    <a href={to} target="_blank" rel="noreferrer" {...rest}>
+    <a href={to} target="_blank" rel="noreferrer" {...rest} title={title}>
       {icon}
       {name}
     </a>
