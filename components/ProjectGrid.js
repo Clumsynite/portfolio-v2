@@ -68,7 +68,7 @@ export const ProjectCard = ({ project, dark }) => {
               name={
                 <Button
                   inverted
-                  color="violet"
+                  color="blue"
                   content="Live"
                   labelPosition="right"
                   icon="eye"

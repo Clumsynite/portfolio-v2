@@ -21,7 +21,7 @@ const api = {
     repo: "https://github.com/Clumsynite/blog-api",
     live: "https://clumsy-blog.herokuapp.com/",
     png: "/images/blog-api.png",
-    languages: ["js", "node", "pug", "mongodb", "passport"],
+    languages: ["js", "node", "pug", "mongodb", "passport", "express"],
   },
   bank: {
     title: "Bank-System-Api",
@@ -210,7 +210,7 @@ const projects = [
     repo: "https://github.com/Clumsynite/inventory-app",
     live: "https://clumsy-inventory.herokuapp.com/",
     png: "/images/inventory-app.png",
-    languages: ["js", "bootstrap", "node", "pug", "mongodb"],
+    languages: ["js", "bootstrap", "node", "pug", "mongodb", "express"],
   },
   {
     title: "React Shopping Cart",
@@ -236,7 +236,7 @@ const projects = [
     repo: "https://github.com/Clumsynite/member-only",
     live: "https://anon-discussions.herokuapp.com/",
     png: "/images/anon-discussions.png",
-    languages: ["js", "bootstrap", "node", "pug", "mongodb"],
+    languages: ["js", "bootstrap", "node", "pug", "mongodb", "express"],
   },
   {
     title: "React Memory Card",
@@ -278,7 +278,7 @@ const projects = [
     repo: "https://github.com/Clumsynite/mini-message-board",
     live: "https://mini-msg-board.herokuapp.com/",
     png: "/images/mini-messageboard.png",
-    languages: ["js", "bootstrap", "node", "pug"],
+    languages: ["js", "bootstrap", "node", "pug", "express"],
   },
   {
     title: "Weather App",
