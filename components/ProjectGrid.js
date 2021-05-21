@@ -3,22 +3,23 @@ import Image from "next/image";
 import * as _ from "lodash";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Interweave from "interweave";
-
+import { Button } from "semantic-ui-react";
 import styles from "../styles/ProjectCard.module.css";
+
 import LanguageIcons from "./LanguageIcons";
+import { ExtLink } from "./CommonComponents";
 
 export const ProjectCard = ({ project, dark }) => {
-  const { title, desc, purpose, repo, live, png, gif, api, languages } =
-    project;
+  const { title, desc, repo, live, png, api, languages } = project;
 
   const imageSize = { height: 180, width: 300 };
 
-  const Tags = ({ languages, title }) =>
+  const Tags = ({ languages, title, size }) =>
     languages.map((language, index) => (
       <LanguageIcons
         key={`${title}.${languages.length}.${language}.${index}`}
         language={language}
-        size={22}
+        size={size}
         dark={dark}
       />
     ));
@@ -42,8 +43,42 @@ export const ProjectCard = ({ project, dark }) => {
           <div className={styles.desc}>
             <Interweave content={desc} />
           </div>
-          <div className={[styles.tags]}>
-            <Tags languages={languages} title={title} />
+          <div className={styles.tags}>
+            <Tags languages={languages} title={title} size={28} />
+          </div>
+          <div className={styles.links}>
+            <ExtLink
+              dark={dark}
+              name={
+                <Button
+                  inverted
+                  color="teal"
+                  content="Repo"
+                  icon="github"
+                  labelPosition="left"
+                  inverted={dark}
+                  basic={!dark}
+                />
+              }
+              title={`Link to ${title}'s Github Repo`}
+              to={repo}
+            />
+            <ExtLink
+              dark={dark}
+              name={
+                <Button
+                  inverted
+                  color="violet"
+                  content="Live"
+                  labelPosition="right"
+                  icon="eye"
+                  inverted={dark}
+                  basic={!dark}
+                />
+              }
+              title={`Link to ${title}'s Homepage`}
+              to={live}
+            />
           </div>
         </div>
       </div>

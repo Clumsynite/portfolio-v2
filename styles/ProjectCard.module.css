@@ -50,6 +50,14 @@
   transition: 0.3s ease-in-out;
 }
 
+.links {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0;
+}
+
 @media (hover: hover) {
   .container:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
