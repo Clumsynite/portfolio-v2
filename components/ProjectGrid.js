@@ -4,9 +4,9 @@ import * as _ from "lodash";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Interweave from "interweave";
 import { Button } from "semantic-ui-react";
-import styles from "../styles/ProjectCard.module.css";
 
-import LanguageIcons from "./LanguageIcons";
+import styles from "../styles/ProjectCard.module.css";
+import LanguageIcon from "./LanguageIcons";
 import { ExtLink } from "./CommonComponents";
 
 export const ProjectCard = ({ project, dark }) => {
@@ -16,7 +16,7 @@ export const ProjectCard = ({ project, dark }) => {
 
   const Tags = ({ languages, title, size }) =>
     languages.map((language, index) => (
-      <LanguageIcons
+      <LanguageIcon
         key={`${title}.${languages.length}.${language}.${index}`}
         language={language}
         size={size}
