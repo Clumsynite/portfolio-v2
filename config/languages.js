@@ -35,6 +35,10 @@ export const languages = {
   pwa: { icon: "ion:logo-pwa", name: "Progressive Web Apps (PWA)" },
   ant: { icon: "logos:ant-design", name: "Ant Design" },
   apollo: { icon: "logos:apollostack", name: "Apollo GraphQl" },
+  api: { icon: "carbon:api-1", name: "API" },
+  app_dark: {icon: "clarity:application-solid", name: "Client"},
+  app_light: {icon: "clarity:application-line", name: "Client"}
+
 };
 
 export default languages;

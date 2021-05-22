@@ -76,7 +76,6 @@
 
   .links {
     transition: 0.3s ease-in-out;
-    /* height: 0; */
     max-height: 0;
     visibility: hidden;
   }

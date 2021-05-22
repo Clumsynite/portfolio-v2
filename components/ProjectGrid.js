@@ -4,13 +4,14 @@ import * as _ from "lodash";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import Interweave from "interweave";
 import { Button } from "semantic-ui-react";
+import ReactCardFlip from "react-card-flip";
 
 import styles from "../styles/ProjectCard.module.css";
 import LanguageIcon from "./LanguageIcons";
 import { ExtLink } from "./CommonComponents";
 
-export const ProjectCard = ({ project, dark }) => {
-  const { title, desc, repo, live, png, api, languages } = project;
+export const ProjectCard = ({ project, dark, flip }) => {
+  const { title, desc, repo, live, api, png, languages } = project;
 
   const imageSize = { height: 180, width: 300 };
 
@@ -41,6 +42,20 @@ export const ProjectCard = ({ project, dark }) => {
           </div>
         )}
         <div className={styles.content}>
+          {flip &&
+            (api ? (
+              <div onClick={() => flip(true)} style={{ cursor: "pointer" }}>
+                <LanguageIcon language={`api`} size={20} dark={dark} />
+              </div>
+            ) : (
+              <div onClick={() => flip(false)} style={{ cursor: "pointer" }}>
+                <LanguageIcon
+                  language={`app_${dark ? "dark" : "light"}`}
+                  size={20}
+                  dark={dark}
+                />
+              </div>
+            ))}
           <h2 className={styles.name}>{title}</h2>
           <div className={styles.desc}>
             <Interweave content={desc} />
@@ -96,9 +111,33 @@ const ProjectGrid = ({ projects, dark }) => {
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
       <Masonry gutter={"10px"}>
-        {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} dark={dark} />
-        ))}
+        {projects.map((project, index) => {
+          const [flipped, setFlipped] = useState(false);
+          const { api } = project;
+
+          const FlippableCard = () => (
+            <ReactCardFlip isFlipped={flipped} cardZIndex="2">
+              <ProjectCard
+                key={index}
+                project={project}
+                dark={dark}
+                flip={setFlipped}
+              />
+              <ProjectCard
+                key={index}
+                project={api}
+                dark={dark}
+                flip={setFlipped}
+              />
+            </ReactCardFlip>
+          );
+
+          return api ? (
+            <FlippableCard key={index} />
+          ) : (
+            <ProjectCard key={index} project={project} dark={dark} />
+          );
+        })}
       </Masonry>
     </ResponsiveMasonry>
   );
