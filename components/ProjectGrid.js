@@ -76,7 +76,7 @@ export const ProjectCard = ({ project, dark }) => {
                     color="blue"
                     content="Live"
                     labelPosition="right"
-                    icon="eye"
+                    icon="external alternate"
                     inverted={dark}
                     basic={!dark}
                   />

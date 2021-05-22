@@ -24,21 +24,25 @@ const MenuItems = ({ page, mobile }) => (
         active={"Home" === page}
         style={{ marginLeft: mobile ? 0 : 50 }}
       >
+        {mobile && <Icon name="home" />}
         Home
       </Menu.Item>
     </Link>
     <Link href={"/projects"}>
       <Menu.Item link active={"Projects" === page}>
+        {mobile && <Icon name="folder" />}
         Projects
       </Menu.Item>
     </Link>
     <Link href={"/contact"}>
       <Menu.Item link active={"Contact" === page}>
+        {mobile && <Icon name="at" />}
         Contact
       </Menu.Item>
     </Link>
     <Link href={"/about"}>
       <Menu.Item link active={"About" === page}>
+        {mobile && <Icon name="user" />}
         About
       </Menu.Item>
     </Link>
