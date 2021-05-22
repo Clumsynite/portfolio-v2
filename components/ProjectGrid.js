@@ -108,25 +108,27 @@ const ProjectGrid = ({ projects, dark }) => {
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
       <Masonry gutter={"10px"}>
         {projects.map((project, index) => {
-          const [flipped, setFlipped] = useState(false);
           const { api } = project;
 
-          const FlippableCard = () => (
-            <ReactCardFlip isFlipped={flipped} cardZIndex="2">
-              <ProjectCard
-                key={index}
-                project={project}
-                dark={dark}
-                flip={setFlipped}
-              />
-              <ProjectCard
-                key={index}
-                project={api}
-                dark={dark}
-                flip={setFlipped}
-              />
-            </ReactCardFlip>
-          );
+          const FlippableCard = () => {
+            const [flipped, setFlipped] = useState(false);
+            return (
+              <ReactCardFlip isFlipped={flipped} flipDirection="vertical">
+                <ProjectCard
+                  key={index}
+                  project={project}
+                  dark={dark}
+                  flip={setFlipped}
+                />
+                <ProjectCard
+                  key={index}
+                  project={api}
+                  dark={dark}
+                  flip={setFlipped}
+                />
+              </ReactCardFlip>
+            );
+          };
 
           return api ? (
             <FlippableCard key={index} />
