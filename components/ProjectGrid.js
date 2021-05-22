@@ -49,11 +49,7 @@ export const ProjectCard = ({ project, dark, flip }) => {
               </div>
             ) : (
               <div onClick={() => flip(false)} style={{ cursor: "pointer" }}>
-                <LanguageIcon
-                  language={`app_${dark ? "dark" : "light"}`}
-                  size={20}
-                  dark={dark}
-                />
+                <LanguageIcon language={`app_light`} size={20} dark={dark} />
               </div>
             ))}
           <h2 className={styles.name}>{title}</h2>
