@@ -2,6 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { Dropdown } from "semantic-ui-react";
 import { intersection } from "lodash";
+
 import styles from "../styles/Projects.module.css";
 import Layout from "../components/Layout";
 import { ThemeContext } from "../context/Theme";
@@ -36,14 +37,14 @@ const Projects = ({ projectList, languageList }) => {
       const object = {
         text: (
           <span>
-            <LanguageIcon
-              language={language}
-              size={20}
-              dark={theme === "dark"}
-            />
-            <span style={{ paddingLeft: 10 }}>
-              {_.get(languageList, `${language}.name`, " ")}
+            <span style={{ paddingRight: 8 }}>
+              <LanguageIcon
+                language={language}
+                size={20}
+                dark={theme === "dark"}
+              />
             </span>
+            {_.get(languageList, `${language}.name`, " ")}
           </span>
         ),
         key: language,
@@ -82,14 +83,23 @@ const Projects = ({ projectList, languageList }) => {
         </Head>
         <main>
           <div className={styles.filter}>
-            <Dropdown
-              placeholder="Project built using ..."
-              fluid
-              multiple
-              selection
-              options={languages}
-              onChange={filterProjects}
-            />
+            <div
+              className={styles.info}
+              style={{ color: theme === "dark" ? "#fbfbfb" : "#0000008e" }}
+            >
+              Currently showing {` ${projects.length} `} projects
+            </div>
+            <div className={styles["filter-dropdown"]}>
+              <Dropdown
+                placeholder="Project built using ..."
+                fluid
+                multiple
+                clearable
+                selection
+                options={languages}
+                onChange={filterProjects}
+              />
+            </div>
           </div>
           <div className={styles.projectsGrid}>
             <ProjectGrid projects={projects} dark={theme === "dark"} />
