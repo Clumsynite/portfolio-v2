@@ -24,12 +24,12 @@ const LanguageIcon = ({ language, size, dark, inline }) =>
 
 LanguageIcon.propTypes = {
   language: string.isRequired,
-  inline: string,
+  inline: bool,
   size: number.isRequired,
   dark: bool.isRequired,
 };
 LanguageIcon.defaultProps = {
-  inline: "false",
+  inline: false,
 };
 
 export default LanguageIcon;

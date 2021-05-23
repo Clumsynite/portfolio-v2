@@ -10,6 +10,30 @@
   transition: 0.3s ease-in-out;
 }
 
+.other-ways-heading {
+  padding-top: 20px;
+  font-size: 1.7rem;
+  font-weight: 700;
+  overflow-wrap: break-word;
+  line-height: 1.1;
+}
+
+.other-ways-list {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.flex-row {
+  margin: 24px 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 1.1rem;
+}
+
 @media (hover: hover) {
   .form:hover {
     padding: 20px;
