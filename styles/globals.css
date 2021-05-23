@@ -46,14 +46,15 @@ img {
   -o-transition: 0.4s linear;
 }
 
-.ui.dropdown .menu .item, .ui.dropdown .menu .selected.item {
-  background-color: var(--main-bg) ;
-  color: var(--main-fg) ;
+.ui.dropdown .menu .item,
+.ui.dropdown .menu .selected.item {
+  background-color: var(--main-bg);
+  color: var(--main-fg);
   transition: 0.3s linear;
 }
 .ui .dropdown .menu .item:hover {
-  background-color: var(--main-fg) ;
-  color: var(--main-bg) ;
+  background-color: var(--main-fg);
+  color: var(--main-bg);
 }
 
 .michroma {
