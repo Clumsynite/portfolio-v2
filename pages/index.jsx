@@ -14,15 +14,17 @@ const Home = () => {
 
   useEffect(() => {
     setMounted(true);
+    // eslint-disable-next-line no-console
     console.log("Hey there\nView the Source code here");
+    // eslint-disable-next-line no-console
     console.log("https://github.com/Clumsynite/portfolio-v2");
   }, []);
 
   return (
-    <Layout page={"Home"}>
+    <Layout page="Home">
       <div className={styles.container}>
         <Head>
-          <title>Rishabh Pathak's Portfolio - Home</title>
+          <title>Rishabh Pathak&apos;s Portfolio - Home</title>
           <meta name="description" content="This is the homepage of Rishabh Pathak's portfolio 2021." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
@@ -41,8 +43,8 @@ const Home = () => {
                   />
                 )
               }
-              title={"Link to my Previous website"}
-              to={"https://rishabhpathak.netlify.app/"}
+              title="Link to my Previous website"
+              to="https://rishabhpathak.netlify.app/"
               dark={theme === "dark"}
             />
           </h1>

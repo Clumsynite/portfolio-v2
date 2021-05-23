@@ -1,6 +1,7 @@
 import Head from "next/head";
 import React, { useState, useEffect, useContext } from "react";
 import { Container } from "semantic-ui-react";
+import { element, string } from "prop-types";
 
 import Navbar from "./Navbar";
 import { ThemeContext } from "../context/Theme";
@@ -38,3 +39,7 @@ export default function Layout({ children, page }) {
     )
   );
 }
+Layout.propTypes = {
+  children: element.isRequired,
+  page: string.isRequired,
+};

@@ -14,7 +14,7 @@ const ThemeContext = createContext({
 function ThemeReducer(state, action) {
   switch (action.type) {
     case "SWITCH_THEME":
-      return (state = action.payload);
+      return action.payload;
     default:
       return state;
   }
@@ -26,16 +26,16 @@ function ThemeProvider(props) {
   const setCSSRoot = (key, value) =>
     document.documentElement.style.setProperty(key, value);
 
-  useEffect(() => {
-    setTheme(localStorage.theme);
-  }, []);
-
   const setTheme = (theme = "dark") => {
     setCSSRoot("--main-bg", ThemeConfig[theme].bg);
     setCSSRoot("--main-fg", ThemeConfig[theme].fg);
     window.localStorage.setItem("theme", theme);
     dispatch({ type: "SWITCH_THEME", payload: theme });
   };
+
+  useEffect(() => {
+    setTheme(localStorage.theme);
+  }, []);
 
   return (
     <ThemeContext.Provider value={{ theme: state, setTheme }} {...props} />

@@ -1,12 +1,13 @@
 import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { Dropdown } from "semantic-ui-react";
-import { intersection } from "lodash";
+import { intersection, forIn, get, uniq } from "lodash";
+import { arrayOf, string } from "prop-types";
 
 import styles from "../styles/Projects.module.css";
 import Layout from "../components/Layout";
 import { ThemeContext } from "../context/Theme";
-import ProjectGrid from "../components/ProjectGrid";
+import ProjectGrid, { projectType } from "../components/ProjectGrid";
 import projectList from "../config/projects";
 import languageList from "../config/languages";
 import LanguageIcon from "../components/LanguageIcons";
@@ -20,6 +21,7 @@ export async function getStaticProps() {
   };
 }
 
+// eslint-disable-next-line no-shadow
 const Projects = ({ projectList, languageList }) => {
   const { theme } = useContext(ThemeContext);
 
@@ -27,13 +29,13 @@ const Projects = ({ projectList, languageList }) => {
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
-    let languages = [];
-    _.forIn(projectList, (value) => {
-      languages = [...languages, ..._.get(value, "languages", [])];
+    let dropdownLanguages = [];
+    forIn(projectList, (value) => {
+      dropdownLanguages = [...languages, ...get(value, "languages", [])];
     });
-    languages = _.uniq(languages);
-    for (let i = 0; i < languages.length; i++) {
-      const language = languages[i];
+    dropdownLanguages = uniq(languages);
+    for (let i = 0; i < dropdownLanguages.length; i += 1) {
+      const language = dropdownLanguages[i];
       const object = {
         text: (
           <span>
@@ -44,7 +46,7 @@ const Projects = ({ projectList, languageList }) => {
                 dark={theme === "dark"}
               />
             </span>
-            {_.get(languageList, `${language}.name`, " ")}
+            {get(languageList, `${language}.name`, " ")}
           </span>
         ),
         key: language,
@@ -62,7 +64,8 @@ const Projects = ({ projectList, languageList }) => {
       setProjects(projectList);
     } else {
       const projectsArray = [];
-      for (let project of projectList) {
+      for (let i = 0; i < projectList.length; i += 1) {
+        const project = projectList[i];
         if (intersection(project.languages, value).length > 0)
           projectsArray.push(project);
       }
@@ -71,10 +74,10 @@ const Projects = ({ projectList, languageList }) => {
   };
 
   return (
-    <Layout page={"Projects"}>
+    <Layout page="Projects">
       <div className={styles.container}>
         <Head>
-          <title>Rishabh Pathak's Portfolio - Projects</title>
+          <title>Rishabh Pathak&apos;s Portfolio - Projects</title>
           <meta
             name="description"
             content="View Rishabh Pathak's recent projects here. "
@@ -108,6 +111,10 @@ const Projects = ({ projectList, languageList }) => {
       </div>
     </Layout>
   );
+};
+Projects.propTypes = {
+  projectList: arrayOf(projectType).isRequired,
+  languageList: arrayOf(string).isRequired,
 };
 
 export default Projects;

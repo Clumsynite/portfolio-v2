@@ -1,6 +1,7 @@
 import React, { useContext } from "react";
-import { ThemeContext } from "../context/Theme";
 import { Icon } from "semantic-ui-react";
+
+import { ThemeContext } from "../context/Theme";
 import { Popup } from "./CommonComponents";
 
 export default function ThemeSwitcher() {
@@ -19,7 +20,7 @@ export default function ThemeSwitcher() {
         onClick={() => setTheme(nextTheme())}
         name={icon[nextTheme()].name}
         circular
-        flipped={"horizontally"}
+        flipped="horizontally"
         link
         color={icon[nextTheme()].color}
         inverted

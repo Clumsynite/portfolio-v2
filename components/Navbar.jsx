@@ -2,6 +2,7 @@ import { createMedia } from "@artsy/fresnel";
 import React, { useState } from "react";
 import { Container, Icon, Menu, Sidebar } from "semantic-ui-react";
 import Link from "next/link";
+import { string, bool, element } from "prop-types";
 
 import ThemeSwitcher from "./ThemeSwitcher";
 import Logo from "./Logo";
@@ -18,67 +19,80 @@ const { MediaContextProvider, Media } = createMedia({
 
 const MenuItems = ({ page, mobile }) => (
   <>
-    <Link href={"/"}>
+    <Link href="/">
       <Menu.Item
         link
-        active={"Home" === page}
+        active={page === "Home"}
         style={{ marginLeft: mobile ? 0 : 50 }}
       >
         {mobile && <Icon name="home" />}
         Home
       </Menu.Item>
     </Link>
-    <Link href={"/projects"}>
-      <Menu.Item link active={"Projects" === page}>
+    <Link href="/projects">
+      <Menu.Item link active={page === "Projects"}>
         {mobile && <Icon name="folder" />}
         Projects
       </Menu.Item>
     </Link>
-    <Link href={"/contact"}>
-      <Menu.Item link active={"Contact" === page}>
+    <Link href="/contact">
+      <Menu.Item link active={page === "Contact"}>
         {mobile && <Icon name="at" />}
         Contact
       </Menu.Item>
     </Link>
-    <Link href={"/about"}>
-      <Menu.Item link active={"About" === page}>
+    <Link href="/about">
+      <Menu.Item link active={page === "About"}>
         {mobile && <Icon name="user" />}
         About
       </Menu.Item>
     </Link>
   </>
 );
-
-const DesktopContainer = ({ children, page, dark }) => {
-  return (
-    <Media greaterThan="mobile">
-      <Menu
-        fixed={"top"}
-        secondary
-        size="large"
-        inverted={dark}
-        style={{
-          backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
-        }}
-      >
-        <Container
-          fluid
-          style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
-        >
-          <Menu.Item>
-            <Logo dark={dark} />
-          </Menu.Item>
-          <MenuItems page={page} />
-          <Menu.Item position="right">
-            <ThemeSwitcher />
-          </Menu.Item>
-        </Container>
-      </Menu>
-      <Container>{children}</Container>
-      <Footer dark={dark} />
-    </Media>
-  );
+MenuItems.propTypes = {
+  page: string.isRequired,
+  mobile: bool,
 };
+MenuItems.defaultProps = {
+  mobile: false,
+};
+
+const containerType = {
+  children: element.isRequired,
+  page: string.isRequired,
+  dark: bool.isRequired,
+};
+
+const DesktopContainer = ({ children, page, dark }) => (
+  <Media greaterThan="mobile">
+    <Menu
+      fixed="top"
+      secondary
+      size="large"
+      inverted={dark}
+      style={{
+        backgroundColor: dark ? ThemeConfig.dark.bg : ThemeConfig.light.bg,
+      }}
+    >
+      <Container
+        fluid
+        style={{ boxShadow: "rgba(0, 0, 0, 0.15) 1.95px 1.95px 2.6px" }}
+      >
+        <Menu.Item>
+          <Logo dark={dark} />
+        </Menu.Item>
+        <MenuItems page={page} />
+        <Menu.Item position="right">
+          <ThemeSwitcher />
+        </Menu.Item>
+      </Container>
+    </Menu>
+    <Container>{children}</Container>
+    <Footer dark={dark} />
+  </Media>
+);
+DesktopContainer.propTypes = containerType;
+
 const MobileContainer = ({ children, dark, page }) => {
   const [sidebarOpened, setSidebarOpened] = useState(false);
   return (
@@ -119,7 +133,7 @@ const MobileContainer = ({ children, dark, page }) => {
                 />
               </Menu.Item>
               <Menu.Item>
-                <Logo dark={dark} mobile={true} />
+                <Logo dark={dark} mobile />
               </Menu.Item>
               <Menu.Item position="right">
                 <ThemeSwitcher />
@@ -133,14 +147,18 @@ const MobileContainer = ({ children, dark, page }) => {
     </Media>
   );
 };
+MobileContainer.propTypes = containerType;
 
-const ResponsiveContainer = ({ children, page, dark }) => {
-  return (
-    <MediaContextProvider>
-      <DesktopContainer children={children} page={page} dark={dark} />
-      <MobileContainer children={children} page={page} dark={dark} />
-    </MediaContextProvider>
-  );
-};
+const ResponsiveContainer = ({ children, page, dark }) => (
+  <MediaContextProvider>
+    <DesktopContainer page={page} dark={dark}>
+      {children}
+    </DesktopContainer>
+    <MobileContainer page={page} dark={dark}>
+      {children}
+    </MobileContainer>
+  </MediaContextProvider>
+);
+ResponsiveContainer.propTypes = containerType;
 
 export default ResponsiveContainer;

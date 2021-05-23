@@ -1,4 +1,6 @@
 import React, { useState, useEffect } from "react";
+import { bool } from "prop-types";
+
 import { ExtLink, Icon } from "./CommonComponents";
 import styles from "../styles/Footer.module.css";
 
@@ -10,7 +12,7 @@ export default function Footer({ dark }) {
       Made with
       {mounted && (
         <Icon
-          name={"fxemoji:beating-heart"}
+          name="fxemoji:beating-heart"
           inline
           size={20}
           style={{ margin: "0px 4px" }}
@@ -18,9 +20,9 @@ export default function Footer({ dark }) {
       )}
       by
       <ExtLink
-        name={"Rishabh Pathak"}
-        title={"Link to my Github Profile"}
-        to={"https://github.com/Clumsynite"}
+        name="Rishabh Pathak"
+        title="Link to my Github Profile"
+        to="https://github.com/Clumsynite"
         dark={dark}
         style={{ paddingLeft: 4 }}
         className="link"
@@ -28,3 +30,7 @@ export default function Footer({ dark }) {
     </footer>
   );
 }
+
+Footer.propTypes = {
+  dark: bool.isRequired,
+};

@@ -1,4 +1,4 @@
-export const languages = {
+const languages = {
   html: { icon: "logos:html-5", name: "HTML" },
   css: { icon: "logos:css-3", name: "CSS" },
   js: { icon: "logos:javascript", name: "Javascript" },

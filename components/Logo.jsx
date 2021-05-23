@@ -1,3 +1,4 @@
+import { bool } from "prop-types";
 import React, { useState } from "react";
 import Typed from "react-typed";
 import * as ThemeConfig from "../config/theme";
@@ -7,7 +8,7 @@ const Logo = ({ dark, mobile }) => {
 
   return (
     <div
-      className={"michroma"}
+      className="michroma"
       style={{
         textAlign: "center",
         height: mobile ? 28 : 40,
@@ -23,7 +24,7 @@ const Logo = ({ dark, mobile }) => {
         <Typed
           strings={["RISHABH", "PATHAK"]}
           typeSpeed={60}
-          smartBackspace={true}
+          smartBackspace
           backSpeed={60}
           showCursor={false}
           loop
@@ -34,5 +35,12 @@ const Logo = ({ dark, mobile }) => {
     </div>
   );
 };
+Logo.propTypes = {
+  dark: bool.isRequired,
+  mobile: bool,
+}
+Logo.defaultProps = {
+  mobile: false
+}
 
 export default Logo;
