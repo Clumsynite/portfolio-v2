@@ -1,4 +1,4 @@
-import { shape, string } from "prop-types";
+import { objectOf, shape, string } from "prop-types";
 
 const languages = {
   html: { icon: "logos:html-5", name: "HTML" },
@@ -43,6 +43,4 @@ const languages = {
 
 export default languages;
 
-export const languageType = shape({
-  object: shape({ icon: string, name: string }),
-});
+export const languageType = objectOf(shape({ icon: string, name: string }));

@@ -29,13 +29,14 @@ const Projects = ({ projectList, languageList }) => {
   const [languages, setLanguages] = useState([]);
 
   useEffect(() => {
-    let dropdownLanguages = [];
+    let filterOptions = [];
     forIn(projectList, (value) => {
-      dropdownLanguages = [...languages, ...get(value, "languages", [])];
+      filterOptions = [...filterOptions, ...get(value, "languages", [])];
     });
-    dropdownLanguages = uniq(languages);
-    for (let i = 0; i < dropdownLanguages.length; i += 1) {
-      const language = dropdownLanguages[i];
+    filterOptions = uniq(filterOptions);
+
+    for (let i = 0; i < filterOptions.length; i += 1) {
+      const language = filterOptions[i];
       const object = {
         text: (
           <span>
@@ -53,9 +54,9 @@ const Projects = ({ projectList, languageList }) => {
         value: language,
       };
 
-      languages[i] = object;
+      filterOptions[i] = object;
     }
-    setLanguages([...languages]);
+    setLanguages([...filterOptions]);
   }, []);
 
   const filterProjects = (_, data) => {
