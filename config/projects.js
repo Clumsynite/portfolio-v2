@@ -10,6 +10,8 @@
   - short-links
 */
 
+import { arrayOf, shape, string } from "prop-types";
+
 const descriptionClass = "project-description";
 const descriptionElement = "div";
 
@@ -368,3 +370,19 @@ const projects = [
 ];
 
 export default projects;
+
+export const projectType = shape({
+  title: string.isRequired,
+  desc: string.isRequired,
+  repo: string.isRequired,
+  live: string,
+  api: shape({
+    title: string,
+    desc: string,
+    repo: string,
+    live: string,
+    languages: arrayOf(string),
+  }),
+  png: string,
+  languages: arrayOf(string).isRequired,
+});

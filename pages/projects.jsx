@@ -2,14 +2,14 @@ import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import { Dropdown } from "semantic-ui-react";
 import { intersection, forIn, get, uniq } from "lodash";
-import { arrayOf, string } from "prop-types";
+import { arrayOf, shape } from "prop-types";
 
 import styles from "../styles/Projects.module.css";
 import Layout from "../components/Layout";
 import { ThemeContext } from "../context/Theme";
-import ProjectGrid, { projectType } from "../components/ProjectGrid";
-import projectList from "../config/projects";
-import languageList from "../config/languages";
+import ProjectGrid from "../components/ProjectGrid";
+import projectList, { projectType } from "../config/projects";
+import languageList, { languageType } from "../config/languages";
 import LanguageIcon from "../components/LanguageIcons";
 
 export async function getStaticProps() {
@@ -114,7 +114,7 @@ const Projects = ({ projectList, languageList }) => {
 };
 Projects.propTypes = {
   projectList: arrayOf(projectType).isRequired,
-  languageList: arrayOf(string).isRequired,
+  languageList: shape({ languageType }).isRequired,
 };
 
 export default Projects;

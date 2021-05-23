@@ -1,3 +1,5 @@
+import { shape, string } from "prop-types";
+
 const languages = {
   html: { icon: "logos:html-5", name: "HTML" },
   css: { icon: "logos:css-3", name: "CSS" },
@@ -40,3 +42,7 @@ const languages = {
 };
 
 export default languages;
+
+export const languageType = shape({
+  object: shape({ icon: string, name: string }),
+});
