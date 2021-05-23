@@ -10,8 +10,18 @@
   transition: 0.3s ease-in-out;
 }
 
+/* For cards with api */
+.flip-container {
+  position: relative;
+}
+
 .box {
   width: 100%;
+}
+
+.flipper {
+  cursor: pointer;
+  padding: 10px;
 }
 
 .thumbnail {
@@ -66,6 +76,12 @@
       rgba(0, 0, 0, 0.23) 0px 6px 6px;
     transform: scale(1.2);
     background-color: var(--main-bg);
+    z-index: 2;
+    margin-bottom: 20px;
+  }
+
+  /* For cards with api */
+  .flip-container:hover {
     z-index: 2;
   }
 

@@ -42,16 +42,6 @@ export const ProjectCard = ({ project, dark, flip }) => {
           </div>
         )}
         <div className={styles.content}>
-          {flip &&
-            (api ? (
-              <div onClick={() => flip(true)} style={{ cursor: "pointer" }}>
-                <LanguageIcon language={`api`} size={20} dark={dark} />
-              </div>
-            ) : (
-              <div onClick={() => flip(false)} style={{ cursor: "pointer" }}>
-                <LanguageIcon language={`app_light`} size={20} dark={dark} />
-              </div>
-            ))}
           <h2 className={styles.name}>{title}</h2>
           <div className={styles.desc}>
             <Interweave content={desc} />
@@ -78,6 +68,16 @@ export const ProjectCard = ({ project, dark, flip }) => {
                 to={repo}
               />
             )}
+            {flip &&
+              (api ? (
+                <div onClick={() => flip(true)} className={styles.flipper}>
+                  <LanguageIcon language={`api`} size={20} dark={dark} />
+                </div>
+              ) : (
+                <div onClick={() => flip(false)} className={styles.flipper}>
+                  <LanguageIcon language={`app_light`} size={20} dark={dark} />
+                </div>
+              ))}
             {live && (
               <ExtLink
                 dark={dark}
@@ -103,39 +103,29 @@ export const ProjectCard = ({ project, dark, flip }) => {
   );
 };
 
+const FlippableCard = ({ project, dark }) => {
+  const [flipped, setFlipped] = useState(false);
+  return (
+    <div className={styles["flip-container"]}>
+      <ReactCardFlip isFlipped={flipped} flipDirection="horizontal">
+        <ProjectCard project={project} dark={dark} flip={setFlipped} />
+        <ProjectCard project={project?.api} dark={dark} flip={setFlipped} />
+      </ReactCardFlip>
+    </div>
+  );
+};
+
 const ProjectGrid = ({ projects, dark }) => {
   return (
     <ResponsiveMasonry columnsCountBreakPoints={{ 350: 1, 750: 2, 900: 3 }}>
       <Masonry gutter={"10px"}>
-        {projects.map((project, index) => {
-          const { api } = project;
-
-          const FlippableCard = () => {
-            const [flipped, setFlipped] = useState(false);
-            return (
-              <ReactCardFlip isFlipped={flipped} flipDirection="vertical">
-                <ProjectCard
-                  key={index}
-                  project={project}
-                  dark={dark}
-                  flip={setFlipped}
-                />
-                <ProjectCard
-                  key={index}
-                  project={api}
-                  dark={dark}
-                  flip={setFlipped}
-                />
-              </ReactCardFlip>
-            );
-          };
-
-          return api ? (
-            <FlippableCard key={index} />
+        {projects.map((project, index) =>
+          project.api ? (
+            <FlippableCard key={index} project={project} dark={dark} />
           ) : (
             <ProjectCard key={index} project={project} dark={dark} />
-          );
-        })}
+          )
+        )}
       </Masonry>
     </ResponsiveMasonry>
   );
