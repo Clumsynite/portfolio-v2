@@ -1,3 +1,8 @@
+/* For cards with api */
+.flip-container {
+  position: relative;
+}
+
 .container {
   position: relative;
   display: flex;
@@ -10,18 +15,12 @@
   transition: 0.3s ease-in-out;
 }
 
-/* For cards with api */
-.flip-container {
-  position: relative;
+.container[disabled] {
+  pointer-events: none;
 }
 
 .box {
   width: 100%;
-}
-
-.flipper {
-  cursor: pointer;
-  padding: 10px;
 }
 
 .thumbnail {
@@ -35,6 +34,19 @@
   word-wrap: break-word;
   padding: 12px;
   overflow-wrap: break-word;
+}
+
+.title {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  justify-content: space-between;
+  padding-bottom: 5px;
+}
+
+.flipper {
+  cursor: pointer;
+  padding: 10px;
 }
 
 .content .desc span .project-description {
@@ -71,6 +83,11 @@
 }
 
 @media (hover: hover) {
+  /* For cards with api */
+  .flip-container:hover {
+    z-index: 2;
+  }
+
   .container:hover {
     box-shadow: rgba(0, 0, 0, 0.19) 0px 10px 20px,
       rgba(0, 0, 0, 0.23) 0px 6px 6px;
@@ -78,11 +95,6 @@
     background-color: var(--main-bg);
     z-index: 2;
     margin-bottom: 20px;
-  }
-
-  /* For cards with api */
-  .flip-container:hover {
-    z-index: 2;
   }
 
   .tags span:hover {

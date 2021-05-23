@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { arrayOf, shape, string, number, bool, func } from "prop-types";
+import { arrayOf, string, number, bool, func } from "prop-types";
 import Image from "next/image";
 import { Button } from "semantic-ui-react";
 import Interweave from "interweave";
@@ -9,30 +9,21 @@ import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 import LanguageIcon from "./LanguageIcons";
 import { ExtLink } from "./CommonComponents";
 import styles from "../styles/ProjectCard.module.css";
-
-export const projectType = shape({
-  title: string.isRequired,
-  desc: string.isRequired,
-  repo: string.isRequired,
-  live: string,
-  api: shape({
-    title: string,
-    desc: string,
-    repo: string,
-    live: string,
-    languages: arrayOf(string),
-  }),
-  png: string,
-  languages: arrayOf(string).isRequired,
-});
+import { projectType } from "../config/projects";
 
 export const ProjectCard = ({ project, dark, flip }) => {
+  const [disabled, setDisabled] = useState(false);
   const { title, desc, repo, live, api, png, languages } = project;
-
   const imageSize = { height: 180, width: 300 };
 
+  // To unhover after flip. Otherwise, flipped card can be seen for sometime.
+  const disableForSometime = () => {
+    setDisabled(true);
+    setTimeout(() => setDisabled(false), 500);
+  };
+
   return (
-    <div className={styles.container}>
+    <div className={styles.container} disabled={disabled}>
       <div className={styles.box}>
         {png && (
           <div className={styles.thumbnail}>
@@ -48,12 +39,38 @@ export const ProjectCard = ({ project, dark, flip }) => {
           </div>
         )}
         <div className={styles.content}>
-          <h2 className={styles.name}>{title}</h2>
+          <div className={styles.title}>
+            <h2 className={styles.name}>{title}</h2>
+            {flip &&
+              (api ? (
+                <div
+                  onClick={() => {
+                    flip(true);
+                    disableForSometime();
+                  }}
+                  className={styles.flipper}
+                  aria-hidden="true"
+                >
+                  <LanguageIcon language="api" size={20} dark={dark} />
+                </div>
+              ) : (
+                <div
+                  onClick={() => {
+                    flip(false);
+                    disableForSometime();
+                  }}
+                  className={styles.flipper}
+                  aria-hidden="true"
+                >
+                  <LanguageIcon language="app_light" size={20} dark={dark} />
+                </div>
+              ))}
+          </div>
           <div className={styles.desc}>
             <Interweave content={desc} />
           </div>
           <div className={styles.tags}>
-            <Tags languages={languages} title={title} size={28} />
+            <Tags languages={languages} title={title} size={28} dark={dark} />
           </div>
           <div className={styles.links}>
             {repo && (
@@ -73,24 +90,6 @@ export const ProjectCard = ({ project, dark, flip }) => {
                 to={repo}
               />
             )}
-            {flip &&
-              (api ? (
-                <div
-                  onClick={() => flip(true)}
-                  className={styles.flipper}
-                  aria-hidden="true"
-                >
-                  <LanguageIcon language="api" size={20} dark={dark} />
-                </div>
-              ) : (
-                <div
-                  onClick={() => flip(false)}
-                  className={styles.flipper}
-                  aria-hidden="true"
-                >
-                  <LanguageIcon language="app_light" size={20} dark={dark} />
-                </div>
-              ))}
             {live && (
               <ExtLink
                 dark={dark}
@@ -121,7 +120,7 @@ ProjectCard.propTypes = {
 };
 
 ProjectCard.defaultProps = {
-  flip: () => null,
+  flip: null,
 };
 
 export const Tags = ({ languages, title, size, dark }) =>
