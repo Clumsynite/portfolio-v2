@@ -1,0 +1,83 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap");
+
+.container {
+  margin: 20px 0;
+  padding: 12px 0;
+  color: #436f70;
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+}
+
+.heading {
+  font-weight: 700;
+  margin: 18px 0;
+  font-size: x-large;
+}
+
+.work {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+  border-left: 1px solid #335556;
+  transition: 0.3s ease-in-out;
+  margin: 0 12px;
+}
+
+.work:after {
+  position: absolute;
+  top: -6px;
+  left: -6px;
+  height: 11px;
+  width: 11px;
+  background: #335556;
+  content: "";
+  border-radius: 50%;
+  border: 1px solid var(--main-bg);
+  transition: 0.3s ease-in-out;
+}
+
+.date {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1rem;
+  align-self: flex-start;
+  padding-left: 14px;
+}
+
+.start {
+  padding: 0 4px;
+}
+
+.end {
+  padding: 0 4px;
+}
+
+.desc {
+  display: flex;
+  flex-direction: column;
+  padding: 40px;
+}
+
+.company {
+  padding: 6px 0;
+  font-size: large;
+}
+
+.designation {
+  padding: 6px 0;
+  font-size: medium;
+}
+
+@media (hover: hover) {
+  .work:hover {
+    border-left: 1px solid var(--main-bg);
+    color: #6ba5a7;
+  }
+  .work:hover:after {
+    top: 60px;
+  }
+}
