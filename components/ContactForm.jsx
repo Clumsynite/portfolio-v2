@@ -1,7 +1,14 @@
 /* eslint-disable no-shadow */
 import { bool } from "prop-types";
 import React, { useState } from "react";
-import { Button, Form, Message } from "semantic-ui-react";
+import {
+  Button,
+  Dimmer,
+  Form,
+  Loader,
+  Message,
+  Segment,
+} from "semantic-ui-react";
 
 import styles from "../styles/Contact.module.css";
 
@@ -78,60 +85,64 @@ const ContactForm = ({ dark }) => {
 
   return (
     <div className={styles.form}>
-      <Form
-        loading={loading}
-        inverted={dark}
-        onSubmit={handleSubmit}
-        size="large"
-        success={success.success}
-        error={error.error}
-      >
-        <Form.Group widths="equal">
-          <Form.Input
-            id="name"
-            name="name"
-            label="Enter your name:"
-            placeholder="Your name?"
-            value={values.name || ""}
-            onChange={handleChange}
-            required
-          />
-          <Form.Input
-            id="email"
-            name="email"
-            label="Enter your email address:"
-            placeholder="Your email?"
-            value={values.email || ""}
-            onChange={handleChange}
-            required
-            type="email"
-          />
-        </Form.Group>
-        <Form.TextArea
-          id="message"
-          name="message"
-          label="Message"
-          placeholder="Wanna message me something...?"
-          value={values.message || ""}
-          onChange={handleChange}
-          rows={5}
-          required
-        />
-        <Button
-          type="submit"
-          content="Message Rishabh"
+      <Dimmer.Dimmable as={Segment} inverted={dark} blurring dimmed={loading}>
+        <Dimmer active={loading} inverted={dark}>
+          <Loader size="large">Sending Message...</Loader>
+        </Dimmer>
+        <Form
           inverted={dark}
+          onSubmit={handleSubmit}
           size="large"
-          fluid
-          loading={loading}
-        />
-        {success.success && (
-          <Message success header={success.title} content={success.content} />
-        )}
-        {error.error && (
-          <Message error header={error.title} content={error.content} />
-        )}
-      </Form>
+          success={success.success}
+          error={error.error}
+        >
+          <Form.Group widths="equal">
+            <Form.Input
+              id="name"
+              name="name"
+              label="Enter your name:"
+              placeholder="Your name?"
+              value={values.name || ""}
+              onChange={handleChange}
+              required
+            />
+            <Form.Input
+              id="email"
+              name="email"
+              label="Enter your email address:"
+              placeholder="Your email?"
+              value={values.email || ""}
+              onChange={handleChange}
+              required
+              type="email"
+            />
+          </Form.Group>
+          <Form.TextArea
+            id="message"
+            name="message"
+            label="Message"
+            placeholder="Wanna message me something...?"
+            value={values.message || ""}
+            onChange={handleChange}
+            rows={5}
+            required
+          />
+          <Button
+            type="submit"
+            content="Message Rishabh"
+            inverted={dark}
+            size="large"
+            fluid
+            disabled={loading}
+          />
+          {success.success && (
+            <Message success header={success.title} content={success.content} />
+          )}
+          {error.error && (
+            <Message error header={error.title} content={error.content} />
+          )}
+        </Form>
+      </Dimmer.Dimmable>
     </div>
   );
 };
