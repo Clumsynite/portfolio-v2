@@ -15,7 +15,7 @@ const LanguageIcon = ({ language, size, dark, inline }) =>
             `${language}.icon`,
             "ant-design:exclamation-circle-outlined"
           )}
-          inline={inline ? null : "false"}
+          inline={inline}
           size={size}
         />
       </span>
