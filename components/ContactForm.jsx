@@ -73,7 +73,6 @@ const ContactForm = ({ dark }) => {
     } catch (error) {
       setLoading(false);
       showError();
-      // console.error("Error sending mail", error)
     }
   };
 
@@ -95,7 +94,7 @@ const ContactForm = ({ dark }) => {
             placeholder="Your name?"
             value={values.name || ""}
             onChange={handleChange}
-            // required
+            required
           />
           <Form.Input
             id="email"
@@ -104,7 +103,7 @@ const ContactForm = ({ dark }) => {
             placeholder="Your email?"
             value={values.email || ""}
             onChange={handleChange}
-            // required
+            required
             type="email"
           />
         </Form.Group>
@@ -116,13 +115,12 @@ const ContactForm = ({ dark }) => {
           value={values.message || ""}
           onChange={handleChange}
           rows={5}
-          // required
+          required
         />
         <Button
           type="submit"
           content="Message Rishabh"
           inverted={dark}
-          // secondary
           size="large"
           fluid
           loading={loading}
