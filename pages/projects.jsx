@@ -10,7 +10,7 @@ import { ThemeContext } from "../context/Theme";
 import ProjectGrid from "../components/ProjectGrid";
 import projectList, { projectType } from "../config/projects";
 import languageList, { languageType } from "../config/languages";
-import LanguageIcon from "../components/LanguageIcons";
+import LanguageIcon from "../components/LanguageIcon";
 
 export async function getStaticProps() {
   return {

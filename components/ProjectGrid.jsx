@@ -6,7 +6,7 @@ import Interweave from "interweave";
 import ReactCardFlip from "react-card-flip";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
-import LanguageIcon from "./LanguageIcons";
+import LanguageIcon from "./LanguageIcon";
 import { ExtLink } from "./CommonComponents";
 import styles from "../styles/ProjectCard.module.css";
 import { projectType } from "../config/projects";

@@ -6,7 +6,7 @@ import Layout from "../components/Layout";
 import ContactForm from "../components/ContactForm";
 import { ThemeContext } from "../context/Theme";
 import { ExtLink, Icon } from "../components/CommonComponents";
-import LanguageIcon from "../components/LanguageIcons";
+import LanguageIcon from "../components/LanguageIcon";
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
