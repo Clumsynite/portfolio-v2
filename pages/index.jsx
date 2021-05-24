@@ -29,7 +29,7 @@ const Home = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
-          <h1 className={styles.title}>
+          <div className={styles.title}>
             Hello, this is{" "}
             <ExtLink
               name={
@@ -47,7 +47,7 @@ const Home = () => {
               to="https://rishabhpathak.netlify.app/"
               dark={theme === "dark"}
             />
-          </h1>
+          </div>
         </main>
       </div>
     </Layout>
