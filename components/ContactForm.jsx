@@ -141,10 +141,20 @@ const ContactForm = ({ dark }) => {
           disabled={loading}
         />
         {success.success && (
-          <Message success header={success.title} content={success.content} />
+          <Message
+            success
+            header={success.title}
+            content={success.content}
+            icon="envelope"
+          />
         )}
         {error.error && (
-          <Message error header={error.title} content={error.content} />
+          <Message
+            error
+            header={error.title}
+            content={error.content}
+            icon="exclamation triangle"
+          />
         )}
       </Form>
     </Dimmer.Dimmable>
