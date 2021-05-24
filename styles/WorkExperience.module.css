@@ -3,7 +3,8 @@
 .container {
   margin: 20px 0;
   padding: 12px 0;
-  color: #436f70;
+  /* color: #436f70; */
+  color: var(--main-fg);
   font-family: "Montserrat", sans-serif;
   box-sizing: border-box;
 }
@@ -16,13 +17,13 @@
 
 .work {
   position: relative;
-  display: flex;
+  display: inline-flex;
   flex-direction: row;
   align-items: center;
   flex-wrap: wrap;
-  border-left: 1px solid #335556;
+  border-left: 1px solid var(--main-fg);
   transition: 0.3s ease-in-out;
-  margin: 0 12px;
+  margin: 15px;
 }
 
 .work:after {
@@ -31,7 +32,7 @@
   left: -6px;
   height: 11px;
   width: 11px;
-  background: #335556;
+  background: var(--main-fg);
   content: "";
   border-radius: 50%;
   border: 1px solid var(--main-bg);
@@ -75,9 +76,9 @@
 @media (hover: hover) {
   .work:hover {
     border-left: 1px solid var(--main-bg);
-    color: #6ba5a7;
   }
   .work:hover:after {
     top: 60px;
+    background-color: #436f70;
   }
 }

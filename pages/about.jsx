@@ -68,7 +68,7 @@ const About = ({ jobs }) => {
             </span>
             , is a pseudonym that I often use in those websites.
           </div>
-          {jobs.length > 0 && <WorkExperience jobs={jobs} />}
+          <section>{jobs.length > 0 && <WorkExperience jobs={jobs} />}</section>
         </main>
       </div>
     </Layout>
