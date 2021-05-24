@@ -64,13 +64,13 @@
 }
 
 .company {
-  padding: 6px 0;
-  font-size: large;
+  padding: 10px 0;
+  font-size: 1.6rem;
 }
 
 .designation {
-  padding: 6px 0;
-  font-size: medium;
+  padding: 10px 0;
+  font-size: 1.2rem;
 }
 
 @media (hover: hover) {
