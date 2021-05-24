@@ -84,66 +84,70 @@ const ContactForm = ({ dark }) => {
   };
 
   return (
-    <div className={styles.form}>
-      <Dimmer.Dimmable as={Segment} inverted={dark} blurring dimmed={loading}>
-        <Dimmer active={loading} inverted={dark}>
-          <Loader size="large">Sending Message...</Loader>
-        </Dimmer>
-        <Form
-          inverted={dark}
-          onSubmit={handleSubmit}
-          size="large"
-          success={success.success}
-          error={error.error}
-        >
-          <Form.Group widths="equal">
-            <Form.Input
-              id="name"
-              name="name"
-              label="Enter your name:"
-              placeholder="Your name?"
-              value={values.name || ""}
-              onChange={handleChange}
-              required
-            />
-            <Form.Input
-              id="email"
-              name="email"
-              label="Enter your email address:"
-              placeholder="Your email?"
-              value={values.email || ""}
-              onChange={handleChange}
-              required
-              type="email"
-            />
-          </Form.Group>
-          <Form.TextArea
-            id="message"
-            name="message"
-            label="Message"
-            placeholder="Wanna message me something...?"
-            value={values.message || ""}
+    <Dimmer.Dimmable
+      as={Segment}
+      inverted={dark}
+      blurring
+      dimmed={loading}
+      className={styles.form}
+    >
+      <Dimmer active={loading} inverted={dark}>
+        <Loader size="large">Sending Message...</Loader>
+      </Dimmer>
+      <Form
+        inverted={dark}
+        onSubmit={handleSubmit}
+        size="large"
+        success={success.success}
+        error={error.error}
+      >
+        <Form.Group widths="equal">
+          <Form.Input
+            id="name"
+            name="name"
+            label="Enter your name:"
+            placeholder="Your name?"
+            value={values.name || ""}
             onChange={handleChange}
-            rows={5}
             required
           />
-          <Button
-            type="submit"
-            content="Message Rishabh"
-            inverted={dark}
-            size="large"
-            fluid
-            disabled={loading}
+          <Form.Input
+            id="email"
+            name="email"
+            label="Enter your email address:"
+            placeholder="Your email?"
+            value={values.email || ""}
+            onChange={handleChange}
+            required
+            type="email"
           />
-          {success.success && (
-            <Message success header={success.title} content={success.content} />
-          )}
-          {error.error && (
-            <Message error header={error.title} content={error.content} />
-          )}
-        </Form>
-      </Dimmer.Dimmable>
-    </div>
+        </Form.Group>
+        <Form.TextArea
+          id="message"
+          name="message"
+          label="Message"
+          placeholder="Wanna message me something...?"
+          value={values.message || ""}
+          onChange={handleChange}
+          rows={5}
+          required
+        />
+        <Button
+          type="submit"
+          content="Message Rishabh"
+          inverted={dark}
+          size="large"
+          fluid
+          disabled={loading}
+        />
+        {success.success && (
+          <Message success header={success.title} content={success.content} />
+        )}
+        {error.error && (
+          <Message error header={error.title} content={error.content} />
+        )}
+      </Form>
+    </Dimmer.Dimmable>
   );
 };
 ContactForm.propTypes = {
