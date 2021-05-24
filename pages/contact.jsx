@@ -10,6 +10,16 @@ import LanguageIcon from "../components/LanguageIcons";
 
 const Contact = () => {
   const { theme } = useContext(ThemeContext);
+
+  const copyUsername = (e) => {
+    const el = document.createElement("textarea");
+    el.value = e.target.textContent;
+    document.body.appendChild(el);
+    el.select();
+    document.execCommand("copy");
+    document.body.removeChild(el);
+  };
+
   return (
     <Layout page="Contact">
       <div className={styles.container}>
@@ -24,7 +34,7 @@ const Contact = () => {
         <main>
           <h1 className={styles.heading}>Contact me</h1>
           <ContactForm dark={theme === "dark"} />
-          <div style={{ margin: "20px 0px" }}>
+          <div style={{ margin: "20px" }}>
             <div className={styles["other-ways-heading"]}>
               Other Ways to Contact Me:
             </div>
@@ -69,7 +79,11 @@ const Contact = () => {
                   title="Copy Username and Open Discord"
                   to="https://discord.com/channels/@me/"
                   name={
-                    <div className={styles["flex-row"]}>
+                    <div
+                      className={styles["flex-row"]}
+                      onClick={copyUsername}
+                      aria-hidden="true"
+                    >
                       <div>
                         <LanguageIcon
                           language="discord"
