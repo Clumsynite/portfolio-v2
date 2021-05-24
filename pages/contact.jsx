@@ -32,7 +32,7 @@ const Contact = () => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <h1 className={styles.heading}>Contact me</h1>
+          <div className="heading">Contact me</div>
           <ContactForm dark={theme === "dark"} />
           <div style={{ margin: "20px" }}>
             <div className={styles["other-ways-heading"]}>

@@ -1,8 +1,6 @@
-.heading {
-  padding-top: 20px;
-  font-size: 30px;
-  font-weight: 700;
-  text-align: center;
+.container {
+  padding: 0.5rem;
+  margin-bottom: 30px;
 }
 
 .form {

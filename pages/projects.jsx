@@ -86,7 +86,7 @@ const Projects = ({ projectList, languageList }) => {
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main>
-          <h1 className={styles.heading}>My Projects</h1>
+          <div className="heading">My Projects</div>
           <div className={styles.filter}>
             <div
               className={styles.info}

@@ -1,0 +1,15 @@
+.container {
+  padding: 0.5rem;
+  margin-bottom: 30px;
+}
+
+.about-me {
+  margin: 12px 0;
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 350;
+}
+
+.name {
+  font-weight: 420;
+}

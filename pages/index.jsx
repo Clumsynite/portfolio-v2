@@ -2,7 +2,7 @@ import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
 import ReactTyped from "react-typed";
 
-import styles from "../styles/Common.module.css";
+import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
 import { ExtLink } from "../components/CommonComponents";
 

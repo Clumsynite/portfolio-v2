@@ -10,7 +10,7 @@
   justify-content: center;
   align-items: center;
   width: 100%;
-  min-height: 240px;
+  min-height: 200px;
   box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
   transition: 0.3s ease-in-out;
 }
@@ -41,7 +41,12 @@
   flex-direction: row;
   align-items: baseline;
   justify-content: space-between;
-  padding-bottom: 5px;
+  padding-bottom: 12px;
+}
+
+.name {
+  font-weight: 500;
+  font-size: 1.4em;
 }
 
 .flipper {
@@ -49,10 +54,12 @@
   padding: 10px;
 }
 
-.content .desc span .project-description {
+.content .desc span {
+  margin: 12px 0;
   width: max-content;
   word-wrap: break-word;
   white-space: normal;
+  font-size: 14px;
 }
 
 .flexRow {

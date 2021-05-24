@@ -40,7 +40,7 @@ export const ProjectCard = ({ project, dark, flip }) => {
         )}
         <div className={styles.content}>
           <div className={styles.title}>
-            <h2 className={styles.name}>{title}</h2>
+            <div className={styles.name}>{title}</div>
             {flip &&
               (api ? (
                 <div
