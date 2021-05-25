@@ -34,40 +34,42 @@ const About = ({ jobs }) => {
         </Head>
         <main>
           <div className="heading">About ME</div>
-          <div className={styles["about-me"]} id="me">
-            I am <span className={styles.name}>Rishabh Jitendra Pathak</span>, a{" "}
-            <Popup content="Mainly Front-end" dark={theme === "dark"}>
-              <span>Fullstack web developer</span>
-            </Popup>
-            . You can find some of my projects on{" "}
-            <Popup content="Link to projects page" dark={theme === "dark"}>
-              <Link href="/projects" title="Link to projects page">
-                this
-              </Link>
-            </Popup>{" "}
-            page or on{" "}
-            <ExtLink
-              dark={theme === "dark"}
-              to="https://github.com/Clumsynite"
-              name={
-                <span>
-                  <Icon name="github" inverted={theme === "dark"} /> my profile
-                </span>
-              }
-              title="Link to my github Profile"
-            />
-            . I am a self-motivated developer with experience in{" "}
-            <span className={styles["about-highlight"]}>responsive design</span>{" "}
-            and creating{" "}
-            <span className={styles["about-highlight"]}>
-              mobile responsive websites
-            </span>{" "}
-            from scratch.{" "}
-            <span className={styles.pseudonym} style={{ color: "#536782" }}>
-              Clumsyknight
-            </span>
-            , is a pseudonym that I often use in those websites.
-          </div>
+          <section>
+            <div className={styles["about-me"]} id="me">
+              I am <span className={styles.name}>Rishabh Jitendra Pathak</span>,
+              a{" "}
+              <Popup content="Mainly Front-end" dark={theme === "dark"}>
+                <span>Fullstack web developer</span>
+              </Popup>
+              . You can find some of my projects on{" "}
+              <Popup content="Link to projects page" dark={theme === "dark"}>
+                <Link href="/projects" title="Link to projects page">
+                  this
+                </Link>
+              </Popup>{" "}
+              page or on{" "}
+              <ExtLink
+                dark={theme === "dark"}
+                to="https://github.com/Clumsynite"
+                name={
+                  <span>
+                    <Icon name="github" inverted={theme === "dark"} /> my
+                    profile
+                  </span>
+                }
+                title="Link to my github Profile"
+              />
+              . I am a self-motivated developer with experience in{" "}
+              <span className={styles["about-highlight"]}>
+                responsive design
+              </span>{" "}
+              and creating{" "}
+              <span className={styles["about-highlight"]}>
+                mobile responsive websites
+              </span>{" "}
+              from scratch.
+            </div>
+          </section>
           <section>{jobs.length > 0 && <WorkExperience jobs={jobs} />}</section>
         </main>
       </div>
