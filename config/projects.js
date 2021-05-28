@@ -1,13 +1,8 @@
 /*
-  Need to add screenshots for dicord-bot
-  - clumsy-bot
-  - portfolio
-  - bank-system-app
-  - clumsy-crypto
-  - clumsy-messenger-app
-  - react-markdown-notes
-  - fcc-merng-app
-  - short-links
+  projects array has a collection of client-side applications
+  api object has a collection of APIs for those projects
+  languages array in project/api is a list of keywords which'll later render a icon for the respective language
+  other data in the object is to be rendered on its respective project-card 
 */
 
 import { arrayOf, shape, string } from "prop-types";
@@ -51,7 +46,7 @@ const api = {
     ],
     repo: "https://github.com/Clumsynite/clumsy-messenger-api",
     live: "https://clumsy-messenger.herokuapp.com",
-    languages: ["js", "express", "node", "postman", "mongodb", "socket"],
+    languages: ["js", "express", "node", "passport", "mongodb", "socket"],
   },
   merng: {
     title: "Fcc-Merng-Api",
@@ -117,7 +112,7 @@ const projects = [
     png: "/images/clumsy-messenger-app.png",
     repo: "https://github.com/Clumsynite/clumsy-messenger-app",
     live: "https://clumsy-messenger.netlify.app",
-    languages: ["react", "redux", "socket", "bootstrap"],
+    languages: ["react", "redux", "socket", "bootstrap", "css"],
     api: api.messenger,
   },
   {
