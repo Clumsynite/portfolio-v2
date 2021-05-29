@@ -1,6 +1,6 @@
 import React from "react";
 import Head from "next/head";
-import PropTypes from 'prop-types'
+import PropTypes from "prop-types";
 import "semantic-ui-css/semantic.min.css";
 
 import "../styles/globals.css";
@@ -28,6 +28,6 @@ MyApp.propTypes = {
   Component: PropTypes.elementType.isRequired,
   // eslint-disable-next-line react/forbid-prop-types
   pageProps: PropTypes.object.isRequired,
-}
+};
 
 export default MyApp;
