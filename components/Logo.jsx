@@ -8,7 +8,6 @@ const Logo = ({ dark, mobile }) => {
 
   return (
     <div
-      className="michroma"
       style={{
         textAlign: "center",
         height: mobile ? 28 : 40,
@@ -20,17 +19,18 @@ const Logo = ({ dark, mobile }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {hover ? (
+      {(!mobile && hover) ? (
         <Typed
-          strings={["RISHABH", "PATHAK"]}
+          strings={["Rishabh Pathak", "rishabhpathak.vercel.app"]}
           typeSpeed={60}
           smartBackspace
           backSpeed={60}
           showCursor={false}
+          className="michroma"
           loop
         />
       ) : (
-        "RISHABH"
+        "<Rishabh />"
       )}
     </div>
   );
