@@ -16,3 +16,21 @@
 .pseudonym {
   font-weight: 400;
 }
+
+.work-resume {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.resume {
+  position: relative;
+  flex: 4;
+  transition: 0.3s ease-in-out;
+}
+
+.image {
+  height: auto;
+  width: 100%;
+}
