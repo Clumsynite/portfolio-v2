@@ -112,3 +112,7 @@ h6 {
 ::-webkit-scrollbar-thumb:hover {
   background: #888888;
 }
+
+svg.react-github-calendar__calendar text {
+  fill: var(--main-fg) !important;
+}
