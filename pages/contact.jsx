@@ -67,7 +67,7 @@ const Contact = () => {
                         <Icon name="logos:linkedin-icon" inline size={40} />
                       </div>
                       <div style={{ paddingLeft: 12 }}>
-                        www.linkedin.com/in/rishabhjpathak
+                        rishabhjpathak
                       </div>
                     </div>
                   }
