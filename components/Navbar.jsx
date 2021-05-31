@@ -136,7 +136,7 @@ const MobileContainer = ({ children, dark, page }) => {
                 <Logo dark={dark} mobile />
               </Menu.Item>
               <Menu.Item position="right">
-                <ThemeSwitcher />
+                <ThemeSwitcher mobile />
               </Menu.Item>
             </Menu>
           </Container>

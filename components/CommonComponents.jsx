@@ -2,14 +2,23 @@ import React from "react";
 import { Popup as SemanticPopup } from "semantic-ui-react";
 import { string, number, bool, node, element } from "prop-types";
 
-export const Popup = ({ dark, content, children }) => (
-  <SemanticPopup trigger={children} content={content} inverted={dark} />
+export const Popup = ({ dark, content, children, disabled }) => (
+  <SemanticPopup
+    trigger={children}
+    content={content}
+    inverted={dark}
+    disabled={disabled}
+  />
 );
 
 Popup.propTypes = {
   dark: bool.isRequired,
   content: node.isRequired,
   children: element.isRequired,
+  disabled: bool,
+};
+Popup.defaultProps = {
+  disabled: false,
 };
 
 export const Icon = ({ name, inline, size, ...rest }) => (

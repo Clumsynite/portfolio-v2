@@ -1,10 +1,11 @@
+import { bool } from "prop-types";
 import React, { useContext } from "react";
 import { Icon } from "semantic-ui-react";
 
 import { ThemeContext } from "../context/Theme";
 import { Popup } from "./CommonComponents";
 
-export default function ThemeSwitcher() {
+export default function ThemeSwitcher({ mobile }) {
   const { theme, setTheme } = useContext(ThemeContext);
 
   const icon = {
@@ -15,7 +16,11 @@ export default function ThemeSwitcher() {
   const nextTheme = () => (theme === "light" ? "dark" : "light");
 
   return (
-    <Popup dark={theme === "dark"} content={icon[nextTheme()].title}>
+    <Popup
+      dark={theme === "dark"}
+      content={icon[nextTheme()].title}
+      disabled={mobile}
+    >
       <Icon
         onClick={() => setTheme(nextTheme())}
         name={icon[nextTheme()].name}
@@ -28,3 +33,10 @@ export default function ThemeSwitcher() {
     </Popup>
   );
 }
+
+ThemeSwitcher.propTypes = {
+  mobile: bool,
+};
+ThemeSwitcher.defaultProps = {
+  mobile: false,
+};
