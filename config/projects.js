@@ -62,6 +62,19 @@ const api = {
 
 const projects = [
   {
+    title: "Notion-Clone",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+        An app inspired from <a href="https://www.notion.so/" target="_blank" rel="noreferrer" title="Link to Notion.so">Notion's</a> interactive input. 
+        <br/>
+        This was built to try out how notion's input options work.
+      </${descriptionElement}>`,
+    purpose: ["Message any registered user"],
+    png: "/images/notion-clone.png",
+    repo: "https://github.com/Clumsynite/notion-clone",
+    live: "http://clumsynite.github.io/notion-clone/",
+    languages: ["react", "js", "bootstrap", "css"],
+  },
+  {
     title: "Short-Links",
     desc: `<${descriptionElement} class=${descriptionClass} >
         Another Url Shortener

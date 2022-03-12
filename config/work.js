@@ -5,7 +5,7 @@ const work = [
     start: "Jan 2021",
     end: "Current",
     company: "Tidal Wave Technologies",
-    designation: "Web Developer",
+    designation: "Software Developer",
   },
 ];
 
