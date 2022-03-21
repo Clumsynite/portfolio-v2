@@ -68,6 +68,22 @@ const api = {
 
 const projects = [
   {
+    title: "The Paratha Store",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      This project is built to recreate a simple checkout system with different products that have addon items and handle the checkout process with addons.
+      </${descriptionElement}>`,
+    purpose: [
+      "View Dishes and it's addons",
+      "Add dishes to Cart with it's selected addons",
+      "Proceed to checkout with items from Cart",
+      "View Grand total on Checkout page and finish Order",
+    ],
+    png: "/images/paratha-store.png",
+    repo: "https://github.com/Clumsynite/paratha-store",
+    live: "https://github.com/Clumsynite/paratha-store",
+    languages: ["react", "js", "ant", "css"],
+  },
+  {
     title: "ShopBridge App",
     desc: `<${descriptionElement} class=${descriptionClass} >
       ShopBridge is a React application that allows you to handle your Invenntory..
@@ -81,7 +97,7 @@ const projects = [
     png: "/images/shopbridge.png",
     repo: "https://github.com/Clumsynite/shopbridge-app",
     live: "https://shopbridge-app.netlify.app/",
-    languages: ["react", "ant", "css"],
+    languages: ["react", "js", "ant", "css"],
     api: api.shopbridge,
   },
   {
