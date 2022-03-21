@@ -39,11 +39,7 @@ const api = {
     desc: `<${descriptionElement} class=${descriptionClass} >
         Api for Clumsy-messenger-app.
       </${descriptionElement}>`,
-    purpose: [
-      "Handle Socket server",
-      "Handle Authentication",
-      "Manipulate mongodb for messages and user",
-    ],
+    purpose: ["Handle Socket server", "Handle Authentication", "Manipulate mongodb for messages and user"],
     repo: "https://github.com/Clumsynite/clumsy-messenger-api",
     live: "https://clumsy-messenger.herokuapp.com",
     languages: ["js", "express", "node", "passport", "mongodb", "socket"],
@@ -102,11 +98,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Create Notes in Markdown and save them to localStorage. Built in React.
       </${descriptionElement}>`,
-    purpose: [
-      "Add notes in markdown",
-      "saves data to localStorage",
-      "Change background color for notes",
-    ],
+    purpose: ["Add notes in markdown", "saves data to localStorage", "Change background color for notes"],
     png: "/images/react-markdown-notes.png",
     repo: "https://github.com/Clumsynite/react-markdown-notes",
     live: "http://clumsynite.github.io/react-markdown-notes",
@@ -117,11 +109,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass}>
         A real-time messaging app. Built with sockets.
       </${descriptionElement}>`,
-    purpose: [
-      "Message any registered user",
-      "Sends realtime messages",
-      "changes online status on disconnect",
-    ],
+    purpose: ["Message any registered user", "Sends realtime messages", "changes online status on disconnect"],
     png: "/images/clumsy-messenger-app.png",
     repo: "https://github.com/Clumsynite/clumsy-messenger-app",
     live: "https://clumsy-messenger.netlify.app",
@@ -133,10 +121,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         A Progressive Web App which displays Realtime Price information about BTC, ETH and LTC
       </${descriptionElement}>`,
-    purpose: [
-      "Checking out how a progressive web app works",
-      "Get realtime rates of BTC, ETH, and LTC",
-    ],
+    purpose: ["Checking out how a progressive web app works", "Get realtime rates of BTC, ETH, and LTC"],
     png: "/images/clumsy-crypto.png",
     repo: "https://github.com/Clumsynite/clumsy-crypto",
     live: "https://clumsynite.github.io/clumsy-crypto/",
@@ -207,10 +192,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Frontend built to <i>make new posts</i>.<br/>Uses <a class='link' href='https://github.com/Clumsynite/blog-api' target='_blank'  rel="noreferrer" >Blog API</a> for authentication and database management.
       </${descriptionElement}>`,
-    purpose: [
-      "User can create new blog posts",
-      "User can manage their posts and comments",
-    ],
+    purpose: ["User can create new blog posts", "User can manage their posts and comments"],
     repo: "https://github.com/Clumsynite/blog-write",
     live: "https://clumsynite.github.io/blog-write/",
     png: "/images/blog-write.png",
@@ -222,10 +204,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Crud App for inventory Management.<br/>Built in order to practice databse management by trying out basic CRUD operations on MongoDB.
       </${descriptionElement}>`,
-    purpose: [
-      "Trying out CRUD operations using MongoDB",
-      "Practe routing using Node & Express",
-    ],
+    purpose: ["Trying out CRUD operations using MongoDB", "Practe routing using Node & Express"],
     repo: "https://github.com/Clumsynite/inventory-app",
     live: "https://clumsy-inventory.herokuapp.com/",
     png: "/images/inventory-app.png",
@@ -262,10 +241,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         This is an avengers themed mini game, where the user will have to click a card from the provided card list. When clicked, your score will increase by one and the cards will be shuffled.
       </${descriptionElement}>`,
-    purpose: [
-      "Practice React hooks for the first time",
-      "Practice maintaining state across components",
-    ],
+    purpose: ["Practice React hooks for the first time", "Practice maintaining state across components"],
     repo: "https://github.com/Clumsynite/react-memory-card",
     live: "https://clumsynite.github.io/react-memory-card",
     png: "/images/memory-card.png",
@@ -276,10 +252,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Simple CV Application which'll render your CV detail as cards.
       </${descriptionElement}>`,
-    purpose: [
-      "Practice maintaining state across components",
-      "Form validation and manipulation",
-    ],
+    purpose: ["Practice maintaining state across components", "Form validation and manipulation"],
     repo: "https://github.com/Clumsynite/react-cv-project",
     live: "https://clumsynite.github.io/react-cv-project/",
     png: "/images/cv-project.png",
@@ -290,10 +263,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Simple Express App built to practice routes and sending data across routes.
       </${descriptionElement}>`,
-    purpose: [
-      "Pactice Routes in express",
-      "Try to successfully render form data",
-    ],
+    purpose: ["Pactice Routes in express", "Try to successfully render form data"],
     repo: "https://github.com/Clumsynite/mini-message-board",
     live: "https://mini-msg-board.herokuapp.com/",
     png: "/images/mini-messageboard.png",
@@ -304,10 +274,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         Weather APp with Gif backgrounds, which change according to the weather.
       </${descriptionElement}>`,
-    purpose: [
-      "Use OpenWeatherMapAPI ro fetch weather details",
-      "Use Giphy API to fetch gif according to the weather",
-    ],
+    purpose: ["Use OpenWeatherMapAPI ro fetch weather details", "Use Giphy API to fetch gif according to the weather"],
     repo: "https://github.com/Clumsynite/weather-app",
     live: "https://clumsynite.github.io/weather-app/",
     png: "/images/weather-app.png",
@@ -329,10 +296,7 @@ const projects = [
     desc: `<${descriptionElement} class=${descriptionClass} >
         React app built to practice react basics
       </${descriptionElement}>`,
-    purpose: [
-      "Practice state manipulation",
-      "Practice event handling in React",
-    ],
+    purpose: ["Practice state manipulation", "Practice event handling in React"],
     repo: "https://github.com/Clumsynite/react-task-list",
     live: "https://clumsynite.github.io/react-task-list/",
     png: "/images/task-list.png",
