@@ -54,9 +54,36 @@ const api = {
     live: "https://fcc-merng-api.herokuapp.com/",
     languages: ["js", "express", "node", "graphql", "apollo", "mongodb"],
   },
+  shopbridge: {
+    title: "ShopBridge-Api",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      REST Api for ShopBridge react client. Simple API for inventory management.
+      </${descriptionElement}>`,
+    purpose: ["Manage mongodb for inventory"],
+    repo: "https://github.com/Clumsynite/shopbridge-api",
+    live: "https://shopbridge-express-api.herokuapp.com/",
+    languages: ["js", "express", "node", "mongodb"],
+  },
 };
 
 const projects = [
+  {
+    title: "ShopBridge App",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      ShopBridge is a React application that allows you to handle your Invenntory..
+      </${descriptionElement}>`,
+    purpose: [
+      "Add New Items to Inventory",
+      "Update Existing Items",
+      "Delete Items from Inventory",
+      "View all items in Inventory",
+    ],
+    png: "/images/shopbridge.png",
+    repo: "https://github.com/Clumsynite/shopbridge-app",
+    live: "https://shopbridge-app.netlify.app/",
+    languages: ["react", "ant", "css"],
+    api: api.shopbridge,
+  },
   {
     title: "Notion-Clone",
     desc: `<${descriptionElement} class=${descriptionClass} >
