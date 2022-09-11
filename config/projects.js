@@ -68,6 +68,26 @@ const api = {
 
 const projects = [
   {
+    title: "React Image Watermarker",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+    A Simple Image Watermarer with few basic editing options.
+    <br/>
+    Options include:
+    <ul>
+      <li>watermark text</li>
+      <li>change font size</li>
+      <li>change font color</li>
+      <li>change position on image</li>
+      <li>rotate watermark text by 45 degrees</li>
+    </ul>
+    </${descriptionElement}>`,
+    purpose: ["Create Watermark", "Edit Images to add watermark to image"],
+    png: "/images/react-image-watermarker.png",
+    repo: "https://github.com/Clumsynite/react-image-watermarker",
+    live: "https://clumsynite.github.io/react-image-watermarker/",
+    languages: ["react", "semanticui"],
+  },
+  {
     title: "The Paratha Store",
     desc: `<${descriptionElement} class=${descriptionClass} >
       This project is built to recreate a simple checkout system with different products that have addon items and handle the checkout process with addons.
