@@ -64,9 +64,67 @@ const api = {
     live: "https://shopbridge-express-api.herokuapp.com/",
     languages: ["js", "express", "node", "mongodb"],
   },
+  flutterChatApp: {
+    title: "Flutter-Chat-Api",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      This project is built to handle all REST and Socket related operations for flutter_chat_app.
+    </${descriptionElement}>`,
+    purpose: ["Manage Auth and Socket for Realtime Messaging App"],
+    repo: "https://github.com/Clumsynite/flutter-chat-api",
+    live: "https://github.com/Clumsynite/flutter-chat-api",
+    languages: ["js", "express", "node", "mongodb", "socket"],
+  },
 };
 
 const projects = [
+  {
+    title: "Flutter Chat App",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      This is the frontend client of flutter chat application built using flutter/dart.
+      A Realtime Messaging Application.
+      <div style="font-size:8px">Proper Sceenshots can be found in the Github Repo</div>
+      <div style="font-size:8px">This is a mobile app and it's server will be Real Time that's why you won't get a live link</div>
+      <div style="font-size:8px">You'll need to run the app and server locally to use/test this app</div>
+      </${descriptionElement}>`,
+    purpose: [
+      // Auth
+      "sign up",
+      "sign in",
+      "reject login if user is already active on a different client",
+
+      // Contacts
+      "view contacts",
+      "send friend request",
+      "cancel friend request",
+      "accept friend request",
+      "remove friend",
+
+      // Messages
+      "view messages from a friend",
+      "send message",
+      "receive message",
+      "delete",
+      "delete all",
+
+      // Realtime
+      "typing",
+      "unread count",
+      "messages",
+      "online",
+      "friend request",
+      "friend list",
+      "user offline if app is closed or user logs out",
+
+      // Profile
+      "update profile details",
+      "change password",
+    ],
+    png: "/images/flutter-chat-app.gif",
+    repo: "https://github.com/Clumsynite/flutter_chat_app",
+    live: "https://github.com/Clumsynite/flutter_chat_app",
+    languages: ["flutter", "dart", "socket"],
+    api: api.flutterChatApp,
+  },
   {
     title: "Hex-RGB",
     desc: `<${descriptionElement} class=${descriptionClass} >
