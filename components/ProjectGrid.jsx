@@ -26,7 +26,7 @@ export const ProjectCard = ({ project, dark, flip }) => {
     <div className={styles.container} disabled={disabled}>
       <div className={styles.box}>
         {png && (
-          <div className={styles.thumbnail}>
+          <div className={styles.thumbnail} style={{ cursor: "pointer" }}>
             <Image
               src={png}
               className={styles.image}
@@ -35,6 +35,7 @@ export const ProjectCard = ({ project, dark, flip }) => {
               objectFit="cover"
               alt={title}
               title={`${title} - Screenshot`}
+              onClick={() => window.open(png)}
             />
           </div>
         )}
@@ -125,12 +126,7 @@ ProjectCard.defaultProps = {
 
 export const Tags = ({ languages, title, size, dark }) =>
   languages.map((language) => (
-    <LanguageIcon
-      key={`${title}.${languages.length}.${language}`}
-      language={language}
-      size={size}
-      dark={dark}
-    />
+    <LanguageIcon key={`${title}.${languages.length}.${language}`} language={language} size={size} dark={dark} />
   ));
 
 Tags.propTypes = {
