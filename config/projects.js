@@ -68,6 +68,17 @@ const api = {
 
 const projects = [
   {
+    title: "Hex-RGB",
+    desc: `<${descriptionElement} class=${descriptionClass} >
+      Simple Hex to RGB Converter
+    </${descriptionElement}>`,
+    purpose: ["Convert Hex Value To RGB", "View HEX/RGB Color on Screen"],
+    png: "/images/hex-rgb.gif",
+    repo: "https://github.com/Clumsynite/hex-rgb",
+    live: "https://clumsynite.github.io/hex-rgb/",
+    languages: ["react", "css", "js"],
+  },
+  {
     title: "React Image Watermarker",
     desc: `<${descriptionElement} class=${descriptionClass} >
     A Simple Image Watermarer with few basic editing options.
@@ -85,7 +96,7 @@ const projects = [
     png: "/images/react-image-watermarker.png",
     repo: "https://github.com/Clumsynite/react-image-watermarker",
     live: "https://clumsynite.github.io/react-image-watermarker/",
-    languages: ["react", "semanticui"],
+    languages: ["react", "semanticui", "js"],
   },
   {
     title: "The Paratha Store",
