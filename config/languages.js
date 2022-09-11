@@ -39,6 +39,8 @@ const languages = {
   apollo: { icon: "logos:apollostack", name: "Apollo GraphQl" },
   api: { icon: "carbon:api-1", name: "API" },
   app_light: { icon: "clarity:application-line", name: "Client" },
+  dart: { icon: "logos:dart", name: "Dart" },
+  flutter: { icon: "logos:flutter", name: "Flutter" },
 };
 
 export default languages;
