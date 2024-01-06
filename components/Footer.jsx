@@ -27,7 +27,7 @@ export default function Footer({ dark }) {
         style={{ paddingLeft: 4 }}
         className="link"
       />
-      <span style={{ paddingLeft: 4 }}>&copy; 2022</span>
+      <span style={{ paddingLeft: 4 }}>&copy; 2024</span>
     </footer>
   );
 }
