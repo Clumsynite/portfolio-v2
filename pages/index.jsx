@@ -3,9 +3,6 @@ import Head from "next/head";
 import ReactTyped from "react-typed";
 import { arrayOf } from "prop-types";
 import Link from "next/link";
-import GitHubCalendar from "react-github-calendar";
-import { Segment } from "semantic-ui-react";
-import ReactTooltip from "react-tooltip";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
 import { ExtLink, Popup } from "../components/CommonComponents";
@@ -38,10 +35,7 @@ const Home = ({ projects }) => {
       <div className={styles.container}>
         <Head>
           <title>Rishabh Pathak&apos;s Portfolio - Home</title>
-          <meta
-            name="description"
-            content="This is the homepage of Rishabh Pathak's portfolio 2021."
-          />
+          <meta name="description" content="This is the homepage of Rishabh Pathak's portfolio 2021." />
           <link rel="icon" href="/favicon.ico" />
         </Head>
         <main className={styles.main}>
@@ -54,11 +48,7 @@ const Home = ({ projects }) => {
                     !mounted ? (
                       "Rishabh Pathak"
                     ) : (
-                      <ReactTyped
-                        strings={[" Rishabh Pathak"]}
-                        typeSpeed={60}
-                        showCursor={false}
-                      />
+                      <ReactTyped strings={[" Rishabh Pathak"]} typeSpeed={60} showCursor={false} />
                     )
                   }
                   title="Link to my Previous website"
@@ -70,9 +60,7 @@ const Home = ({ projects }) => {
           </section>
           <section>
             <div className={styles["projects-grid"]}>
-              <div className={styles["project-heading"]}>
-                Some of my recent Projects
-              </div>
+              <div className={styles["project-heading"]}>Some of my recent Projects</div>
               <ProjectGrid projects={projects} dark={theme === "dark"} />
               <div className={styles["project-link"]}>
                 <Popup dark={theme === "dark"} content="Link to All Projects">
@@ -84,18 +72,6 @@ const Home = ({ projects }) => {
                 </Popup>
               </div>
             </div>
-          </section>
-          <section>
-            <Segment inverted={theme === "dark"}>
-              <GitHubCalendar
-                username="clumsynite"
-                blockSize={18}
-                fontSize={18}
-                blockMargin={4}
-              >
-                <ReactTooltip delayShow={40} html />
-              </GitHubCalendar>
-            </Segment>
           </section>
         </main>
       </div>
