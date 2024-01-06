@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { arrayOf, string, number, bool, func } from "prop-types";
 import Image from "next/image";
 import { Button } from "semantic-ui-react";
-import Interweave from "interweave";
+import { Interweave } from "interweave";
 import ReactCardFlip from "react-card-flip";
 import Masonry, { ResponsiveMasonry } from "react-responsive-masonry";
 
