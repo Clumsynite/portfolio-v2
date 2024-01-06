@@ -13,6 +13,6 @@
   },
   "plugins": ["react"],
   "rules": {
-    "react/jsx-props-no-spreading": ["off", { "html": true }]
+    "react/jsx-props-no-spreading": ["off", { "html": "ignore" }]
   }
 }

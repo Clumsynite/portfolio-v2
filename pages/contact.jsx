@@ -35,9 +35,7 @@ const Contact = () => {
           <div className="heading">Contact me</div>
           <ContactForm dark={theme === "dark"} />
           <div style={{ margin: "20px" }}>
-            <div className={styles["other-ways-heading"]}>
-              Other Ways to Contact Me:
-            </div>
+            <div className={styles["other-ways-heading"]}>Other Ways to Contact Me:</div>
             <div className={styles["other-ways-list"]}>
               <div title="email">
                 <ExtLink
@@ -49,9 +47,7 @@ const Contact = () => {
                       <div>
                         <Icon name="logos:google-gmail" inline size={40} />
                       </div>
-                      <div style={{ paddingLeft: 12 }}>
-                        rishabhjpathak@gmail.com
-                      </div>
+                      <div style={{ paddingLeft: 12 }}>rishabhjpathak@gmail.com</div>
                     </div>
                   }
                 />
@@ -66,9 +62,7 @@ const Contact = () => {
                       <div>
                         <Icon name="logos:linkedin-icon" inline size={40} />
                       </div>
-                      <div style={{ paddingLeft: 12 }}>
-                        rishabhjpathak
-                      </div>
+                      <div style={{ paddingLeft: 12 }}>rishabhjpathak</div>
                     </div>
                   }
                 />
@@ -79,18 +73,9 @@ const Contact = () => {
                   title="Copy Username and Open Discord"
                   to="https://discord.com/channels/@me/"
                   name={
-                    <div
-                      className={styles["flex-row"]}
-                      onClick={copyUsername}
-                      aria-hidden="true"
-                    >
+                    <div className={styles["flex-row"]} onClick={copyUsername} aria-hidden="true">
                       <div>
-                        <LanguageIcon
-                          language="discord"
-                          inline
-                          size={40}
-                          dark={theme === "dark"}
-                        />
+                        <LanguageIcon language="discord" inline size={40} dark={theme === "dark"} />
                       </div>
                       <div style={{ paddingLeft: 12 }}>Clumsyknight#5550</div>
                     </div>
