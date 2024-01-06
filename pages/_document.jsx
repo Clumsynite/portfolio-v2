@@ -1,6 +1,10 @@
 import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
+const title = "Rishabh Pathak's Portfolio";
+const description = "A Website build to showcase my Projects and Experience";
+const src = "/preview.png";
+
 class MyDocument extends Document {
   static async getInitialProps(ctx) {
     const initialProps = await Document.getInitialProps(ctx);
@@ -11,12 +15,16 @@ class MyDocument extends Document {
     return (
       <Html lang="en">
         <Head>
-          <meta property="og:title" content="Rishabh Pathak's Portfolio" />
-          <meta property="og:description" content="A Website build to showcase my Projects and Experience" />
+          <meta property="title" content={title} />
+          <meta name="description" content={description} />
 
-          <meta property="og:image" content="/preview.png" />
+          <meta property="og:title" content={title} />
+          <meta property="og:description" content={description} />
+          <meta property="og:image" content={src} />
 
-          <meta name="twitter:image" content="preview.png" />
+          <meta property="twitter:title" content={title} />
+          <meta property="twitter:description" content={description} />
+          <meta name="twitter:image" content={src} />
         </Head>
         <body>
           <Main />
