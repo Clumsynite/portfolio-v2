@@ -26,7 +26,7 @@ const Logo = ({ dark, mobile }) => {
           omitDeletionAnimation
           deletionSpeed={5}
           cursor={false}
-          repeat={Infinity}
+          repeat={2}
         />
       ) : (
         "<Rishabh />"

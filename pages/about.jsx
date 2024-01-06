@@ -37,8 +37,7 @@ const About = ({ jobs }) => {
           <div className="heading">About ME</div>
           <section id="about-me">
             <div className={styles["about-me"]} id="me">
-              I am <span className={styles.name}>Rishabh Jitendra Pathak</span>,
-              a{" "}
+              I am <span className={styles.name}>Rishabh Jitendra Pathak</span>, a{" "}
               <Popup content="Mainly Front-end" dark={theme === "dark"}>
                 <span>Fullstack web developer</span>
               </Popup>
@@ -54,32 +53,20 @@ const About = ({ jobs }) => {
                 to="https://github.com/Clumsynite"
                 name={
                   <span>
-                    <Icon name="github" inverted={theme === "dark"} /> my
-                    profile
+                    <Icon name="github" inverted={theme === "dark"} /> my profile
                   </span>
                 }
                 title="Link to my github Profile"
               />
               . I am a self-motivated developer with experience in{" "}
-              <span className={styles["about-highlight"]}>
-                responsive design
-              </span>{" "}
-              and creating{" "}
-              <span className={styles["about-highlight"]}>
-                mobile responsive websites
-              </span>{" "}
-              from scratch.
+              <span className={styles["about-highlight"]}>responsive design</span> and creating{" "}
+              <span className={styles["about-highlight"]}>mobile responsive websites</span> from scratch.
             </div>
           </section>
           <section className={styles["work-resume"]}>
-            {jobs.length > 0 && <WorkExperience jobs={jobs} />}
+            <div>{jobs.length > 0 && <WorkExperience jobs={jobs} />}</div>
             <div className={styles.resume}>
-              <Dimmer.Dimmable
-                as={Segment}
-                blurring
-                dimmed={loading}
-                inverted={theme === "dark"}
-              >
+              <Dimmer.Dimmable as={Segment} blurring dimmed={loading} inverted={theme === "dark"}>
                 <Dimmer active={loading} inverted={theme !== "dark"}>
                   <Loader>Loading Resume...</Loader>
                 </Dimmer>

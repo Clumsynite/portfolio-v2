@@ -1,4 +1,4 @@
-import React from 'react'
+import React from "react";
 import Document, { Html, Head, Main, NextScript } from "next/document";
 
 class MyDocument extends Document {
@@ -10,7 +10,14 @@ class MyDocument extends Document {
   render() {
     return (
       <Html lang="en">
-        <Head />
+        <Head>
+          <meta property="og:title" content="Rishabh Pathak's Portfolio" />
+          <meta property="og:description" content="A Website build to showcase my Projects and Experience" />
+
+          <meta property="og:image" content="/preview.png" />
+
+          <meta name="twitter:image" content="preview.png" />
+        </Head>
         <body>
           <Main />
           <NextScript />

@@ -49,12 +49,12 @@ const Home = ({ projects }) => {
                       "Rishabh Pathak"
                     ) : (
                       <TypeAnimation
-                        sequence={[" Rishabh Pathak", "abcd"]}
+                        sequence={[" Rishabh Pathak"]}
                         speed={2}
                         omitDeletionAnimation
                         deletionSpeed={5}
                         cursor={false}
-                        repeat={Infinity}
+                        repeat={2}
                       />
                     )
                   }
