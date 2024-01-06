@@ -1,6 +1,6 @@
 import { bool } from "prop-types";
 import React, { useState } from "react";
-import Typed from "react-typed";
+import { TypeAnimation } from "react-type-animation";
 import * as ThemeConfig from "../config/theme";
 
 const Logo = ({ dark, mobile }) => {
@@ -19,15 +19,14 @@ const Logo = ({ dark, mobile }) => {
       onMouseEnter={() => setHover(true)}
       onMouseLeave={() => setHover(false)}
     >
-      {(!mobile && hover) ? (
-        <Typed
-          strings={["Rishabh Pathak", "rishabhpathak.vercel.app"]}
-          typeSpeed={60}
-          smartBackspace
-          backSpeed={60}
-          showCursor={false}
-          className="michroma"
-          loop
+      {!mobile && hover ? (
+        <TypeAnimation
+          sequence={["Rishabh Pathak", window.location.host]}
+          speed={2}
+          omitDeletionAnimation
+          deletionSpeed={5}
+          cursor={false}
+          repeat={Infinity}
         />
       ) : (
         "<Rishabh />"
@@ -38,9 +37,9 @@ const Logo = ({ dark, mobile }) => {
 Logo.propTypes = {
   dark: bool.isRequired,
   mobile: bool,
-}
+};
 Logo.defaultProps = {
-  mobile: false
-}
+  mobile: false,
+};
 
 export default Logo;

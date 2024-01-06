@@ -1,8 +1,8 @@
 import React, { useState, useEffect, useContext } from "react";
 import Head from "next/head";
-import ReactTyped from "react-typed";
 import { arrayOf } from "prop-types";
 import Link from "next/link";
+import { TypeAnimation } from "react-type-animation";
 import styles from "../styles/Home.module.css";
 import Layout from "../components/Layout";
 import { ExtLink, Popup } from "../components/CommonComponents";
@@ -48,7 +48,14 @@ const Home = ({ projects }) => {
                     !mounted ? (
                       "Rishabh Pathak"
                     ) : (
-                      <ReactTyped strings={[" Rishabh Pathak"]} typeSpeed={60} showCursor={false} />
+                      <TypeAnimation
+                        sequence={[" Rishabh Pathak", "abcd"]}
+                        speed={2}
+                        omitDeletionAnimation
+                        deletionSpeed={5}
+                        cursor={false}
+                        repeat={Infinity}
+                      />
                     )
                   }
                   title="Link to my Previous website"
