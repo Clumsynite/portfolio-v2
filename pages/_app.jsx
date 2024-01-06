@@ -9,7 +9,7 @@ import { ThemeProvider } from "../context/Theme";
 
 function MyApp({ Component, pageProps }) {
   const title = "Rishabh Pathak's Portfolio";
-  const description = "A Website build to showcase my Projects and Experience";
+  const description = "A Website built to showcase my Projects and Experience";
   const src = "https://rishabhpathak.vercel.app/preview.png";
 
   return (

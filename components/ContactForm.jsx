@@ -53,6 +53,8 @@ const ContactForm = ({ dark }) => {
   const handleSubmit = async (e) => {
     try {
       e.preventDefault();
+      setError(initialError);
+      setSuccess(initialSuccess);
       setLoading(true);
       const data = await sendMail({
         ...values,

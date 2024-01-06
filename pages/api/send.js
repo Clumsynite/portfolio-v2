@@ -1,4 +1,5 @@
 import nodemailer from "nodemailer";
+import rateLimit from "../../utils/rate-limit";
 import template from "../../templates";
 
 const transport = {
@@ -11,8 +12,15 @@ const transport = {
   },
 };
 
+const limiter = rateLimit({
+  interval: 60 * 1000, // 60 seconds
+  uniqueTokenPerInterval: 500, // Max 500 Users per Minute
+});
+
 const sendMail = async (req, res) => {
   try {
+    await limiter.check(res, 3, req.ip); // 10 requests per minute
+
     const { name, email, message, website } = req.body;
     const { content, selfHTML, userHTML } = template(name, email, message, website, false);
 
@@ -63,7 +71,8 @@ const sendMail = async (req, res) => {
       msg: `Message sent`,
     });
   } catch (error) {
-    // console.error("Error while sending Mail", { error });
+    // eslint-disable-next-line no-console
+    console.error("Error while sending Mail", error);
     return res.json({ err: true, msg: "Failed to send mail", error });
   }
 };
