@@ -64,7 +64,7 @@ const About = ({ jobs }) => {
             </div>
           </section>
           <section className={styles["work-resume"]}>
-            <div>{jobs.length > 0 && <WorkExperience jobs={jobs} />}</div>
+            <div>{jobs.length > 0 && <WorkExperience jobs={jobs} dark={theme === "dark"} />}</div>
             <div className={styles.resume}>
               <Dimmer.Dimmable as={Segment} blurring dimmed={loading} inverted={theme === "dark"}>
                 <Dimmer active={loading} inverted={theme !== "dark"}>

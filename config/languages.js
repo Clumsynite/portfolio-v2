@@ -41,6 +41,11 @@ const languages = {
   app_light: { icon: "clarity:application-line", name: "Client" },
   dart: { icon: "logos:dart", name: "Dart" },
   flutter: { icon: "logos:flutter", name: "Flutter" },
+  koa: { icon: "logos:koa", name: "KoaJS" },
+  couchdb: { icon: "logos:couchdb", name: "Couch DB" },
+  pouchdb: { icon: "logos:pouchdb", name: "Pouch DB" },
+  arangodb: { icon: "logos:arangodb", name: "arango DB" },
+  postgresql: { icon: "devicon:postgresql-wordmark", name: "PostgresQL" },
 };
 
 export default languages;

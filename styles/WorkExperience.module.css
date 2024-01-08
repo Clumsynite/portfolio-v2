@@ -63,6 +63,10 @@
   padding: 40px;
 }
 
+.projects_link {
+  display: inline-block;
+}
+
 .company {
   padding: 10px 0;
   font-size: 1.6rem;
