@@ -19,6 +19,9 @@ export async function getStaticProps() {
   };
 }
 
+const RESUME_IMAGE = "https://raw.githubusercontent.com/Clumsynite/resume/master/resume.png";
+const RESUME_PDF = "https://docs.google.com/viewer?url=https://github.com/Clumsynite/resume/raw/master/resume.pdf";
+
 const About = ({ jobs }) => {
   const { theme } = useContext(ThemeContext);
   const [loading, setLoading] = useState(true);
@@ -73,10 +76,10 @@ const About = ({ jobs }) => {
 
                 <div className={styles.image}>
                   <ExtLink
-                    to="/resume.jpg"
+                    to={RESUME_IMAGE}
                     name={
                       <img
-                        src="/resume.jpg"
+                        src={RESUME_IMAGE}
                         alt="Rishabh Pathak's Resume"
                         style={{ height: "100%", width: "100%" }}
                         onLoad={() => setLoading(false)}
@@ -87,7 +90,7 @@ const About = ({ jobs }) => {
                   />
                 </div>
                 <ExtLink
-                  to="/resume.pdf"
+                  to={RESUME_PDF}
                   name={
                     <Button loading={loading} primary fluid>
                       View as PDF
